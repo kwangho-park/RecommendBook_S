@@ -1,2 +1,2 @@
-# sot
+# solt
 space of logical thinking
