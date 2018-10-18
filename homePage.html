@@ -5,6 +5,7 @@
 
   <title> Recommend book </title>
   
+
   <meta charset = "utf-8">
   <meta name="description" content = "사용자의 취향을 고려한 도서 추천 웹 사이트">
   <meta name="keywords" content = "book">
@@ -19,12 +20,20 @@
     text-align : center;
     font-size : 3em;
     }
+    
+    /* 웹 페이지 사이즈에 이미지를 조절하기 위한 tag 설정*/
+    /* [update] 내가 설정한 비율로 직사각형 표출하는방법은? = 현재는 이미지의 원본사이즈  */
+    img {
+    max-width: 100%;
+    /*height: auto;*/
+    }
+    
   </style>
   
   
   <!-- 속성 단위 css -->  
   <style>
-  
+
     #boxModelHomeImg{
     padding : 20px;
     
@@ -37,6 +46,8 @@
     magin : 100px;
     }
 
+
+
   </style>
 
 </head>
@@ -45,22 +56,24 @@
 
 <body>
 
-  <header> 
+  <header>  
   	[header area] Recommend book web site 
   </header>
 
-  <nav> 
-  	[navigation area] menu bar(hyper link) : [회원가입], [추천도서 검색], [추천도서 등록], [오늘의 추천 도서] 
-  </nav>
-
   <aside> 
 	[aside area] reference contents :  
-
     <a href = "http://solt.tistory.com" target = "_blank" title = "극논리주의 짠백이"> 
-
      박광호의 기술블로그 (solt.tistory.com) </a>
-
   </aside>	
+  
+  <nav> 
+  	[navigation area] menu bar(hyper link) : 
+    <a href="homePage.html">[홈 페이지]</a>,  	
+  	<a href = "JoinClient.html" target = "_self">[회원가입]</a>, 
+    [로그인], 
+    <a href="searchBook.html" target="_self">[추천도서 검색]</a>,  	
+  	[게시글 작성] 
+  </nav>
   
 
   <hr>
@@ -69,54 +82,20 @@
 
     <h1> Recommend book web site </h1>
 
-    <h2> schedule : 1차 project <time datetime="2018-10-26"> 2018.10.26(금) </time> </h2>
-    <p> 진행률 : <progress value = "10" max = "100"> </progress> </p>
+    <h2> schedule : 1차 project <time datetime="2018-11-02"> 2018.11.02(금) </time> </h2>
+    <p> 진행률 : <progress value = "30" max = "100"> </progress> 30%</p>
 
-
-    <!-- home page 메인 이미지 -->
-    <img id = "boxModelHomeImg" src="img/books(free_licence).jpg" width= "1300px" height = "500px">
-    
     
     <!-- 인사말 및 회원가입 link -->
     <article>
-      <p> <strong>박광호님</strong>, 안녕하세요. 추천도서 웹 페이지에 오신것을 환영합니다. <br>
-    해당 웹 사이트를 이용하기 위해서 회원가입이 필요합니다^^ </p>
+      <p>안녕하세요. <strong>도서 추천 웹 사이트에 오신것을 환영합니다^^</strong><br>
+      해당 웹 사이트를 이용하기 위해서 회원가입이 필요합니다. </p>
    
-      <p> <a href = "JoinClient.html" target = "_blank"> 회원가입 바로가기 </a> <p>
-    
     </article>
-    
-    <hr>
-    
-    
-    <!-- 별점 순위표 및 오늘의 추천 도서 -->
-    <article>
-      <iframe src="bookRanking.html"    width = "40%" height = "400"></iframe>
-      <iframe src="recommendToday.html" width = "55%" height = "400"></iframe>
-    </article>
-    
+ 
+    <!-- home page 메인 이미지 -->
 
-    <hr>
-
-	<!-- 도서 리스트 (추후 검색 필터로 이동) -->
-    <article>
-      <h2> 장르별 도서 리스트 </h2>
-
-      <ul>
-        <li>소설</li>
-        <li>시/에세이</li>
-        <li>인문학</li>
-        <li>경제경영</li>
-        <li>자기계발</li>
-        <li>자격증</li>
-        <li>대학/전공서적</li>
-        <li>취미/레저/여행/뷰티</li>
-        <li>아동/청소년</li>
-        <li>만화</li>
-        <li>기타</li>
-      </ul>
-    </article>
-
+    <img id = "boxModelHomeImg" src="img/books(free_licence).jpg" width= "1200px" height = "200px">
 
   </section>
 

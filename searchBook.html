@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title> search book </title>
+
+  <meta charset = "utf-8">
+  <meta name="description" content = "사용자의 취향을 고려한 도서 추천 웹 사이트">
+  <meta name="keywords" content = "book">
+
+  <!-- 전체 + tag 단위 css -->  
+  <style>
+    @import url(webSiteStyle.css);  
+  </style>
+  
+</head>
+  <header> 
+  	[header area] Recommend book web site 
+  </header>
+
+  <aside> 
+	[aside area] reference contents :  
+    <a href = "http://solt.tistory.com" target = "_blank" title = "극논리주의 짠백이"> 
+     박광호의 기술블로그 (solt.tistory.com) </a>
+  </aside>	
+  
+  <nav> 
+  	[navigation area] menu bar(hyper link) : 
+    <a href="homePage.html">[홈 페이지]</a>,  	
+  	<a href = "JoinClient.html" target = "_self">[회원가입]</a>, 
+    [로그인], 
+    <a href="searchBook.html" target="_self">[추천도서 검색]</a>,  	
+  	[게시글 작성] 
+  </nav>
+  
+  
+  <hr>
+  
+  <section>
+  
+      <!-- 별점 순위표 및 오늘의 추천 도서 -->
+    <article>
+      <iframe src="searchList.html" width = "55%" height = "400"></iframe>
+      <iframe src="rankingTable.html"    width = "40%" height = "400"></iframe>
+    </article>
+    
+  </section>
+  
+  
+  <hr>
+
+  <footer> 
+    [footer area] 해당 web site는 <mark>박광호(웹 프로그래머)에게 저작권</mark>이 있습니다
+  </footer>
+
+</body>
+</html>

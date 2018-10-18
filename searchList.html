@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> recommend today </title>
+  
+  <meta charset = "utf-8">
+  <meta name="description" content = "사용자의 취향을 고려한 도서 추천 웹 사이트">
+  <meta name="keywords" content = "book">
+  
+  <style>
+    @import url(webSiteStyle.css);
+  </style>
+</head>
+
+
+<body>
+
+  <!-- 도서를 추천받기 위한 정보 검색 리스트 -->
+  <h1> 당신의 도서 취향은? </h1>    
+  
+  <p> 
+  <label> 1. 분류 : </label> 
+    <select name = "bookType" size = "1"> 
+      <option value = "fiction"> 소설 </option>
+      <option value = "essay"> 에세이/시 </option>
+      <option value = "humanities"> 인문학 </option>
+      <option value = "economy"> 경제경영 </option>
+      <option value = "develop"> 자기계발 </option>
+      <option value = "license"> 자격증 </option>
+      <option value = "university"> 대학/전공서적 </option>
+      <option value = "hobby"> 취미/레저/여행/뷰티 </option>
+      <option value = "child"> 아동/청소년 </option>
+      <option value = "cartoon"> 만화 </option>            
+      <option value = "other"> 기타 </option>
+    </select>
+  </p>
+  
+  <p>  
+  <label> 2. 취향 : </label> 
+    <select name = "favorite" size = "1"> 
+      <option value = "romance"> 달달한 로맨스 </option>
+      <option value = "wit"> 재미있는 유머 </option>
+      <option value = "story"> 탄탄한 스토리 </option>
+    </select>      
+  </p>
+  
+  <p>
+  <label> 3. 난이도 : </label> 
+    <select name = "level" size = "1"> 
+      <option value = "normal"> 보통 </option>
+      <option value = "low"> 난이도 하 </option>
+    </select>  
+    
+  </p>   
+
+
+
+</body>
+</html>
