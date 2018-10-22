@@ -22,10 +22,14 @@
     }
     
     /* 웹 페이지 사이즈에 이미지를 조절하기 위한 tag 설정*/
-    /* [update] 내가 설정한 비율로 직사각형 표출하는방법은? = 현재는 이미지의 원본사이즈  */
+    /* img를 블록화, 좌우 여백 오토 설정, 이미지 폭 항상(padding, border고려) : 95% */
     img {
-    max-width: 100%;
-    /*height: auto;*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+   
+    width: 95%;
+
     }
     
   </style>
@@ -35,19 +39,15 @@
   <style>
 
     #boxModelHomeImg{
-    padding : 20px;
+    padding : 0.2em;
     
-    border-width : 10px	;
+    border-width : 0.3em;
+
     border-color : Sienna;
     border-style : solid;
     
     background : peru;
-   
-    magin : 100px;
     }
-
-
-
   </style>
 
 </head>
@@ -95,8 +95,8 @@
  
     <!-- home page 메인 이미지 -->
 
-    <img id = "boxModelHomeImg" src="img/books(free_licence).jpg" width= "1200px" height = "200px">
-
+    <img id = "boxModelHomeImg" src="img/books(free_licence).jpg" width= "1000px" height = "500px">
+	
   </section>
 
   <hr>
