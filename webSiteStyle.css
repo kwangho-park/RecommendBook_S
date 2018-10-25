@@ -1,6 +1,7 @@
  
+ /* web site 전체 CSS 스타일*/
 body {
-background-color : PowderBlue;
+background-color : PowderBlue   ;
 margin-left: 100px;
 margin-right: 100px;
 border : 3px solid gray;

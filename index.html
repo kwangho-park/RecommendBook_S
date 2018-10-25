@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title> Recommend book </title>
+  
+
+  <meta charset = "utf-8">
+  <meta name="description" content = "사용자의 취향을 고려한 도서 추천 웹 사이트">
+  <meta name="keywords" content = "book">
+
+
+  <!-- 전체 + tag 단위 css -->  
+  <style>
+    @import url(webSiteStyle.css);
+    
+    h1{
+    color : DarkBlue ; 
+    text-align : center;
+    font-size : 3em;
+    }
+    
+    /* 웹 페이지 사이즈에 이미지를 조절하기 위한 tag 설정*/
+    /* img를 블록화, 좌우 여백 오토 설정, 이미지 폭 항상(padding, border고려) : 95% */
+    img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+   
+    width: 95%;
+
+    }
+    
+  </style>
+  
+  
+  <!-- 속성 단위 css -->  
+  <style>
+
+    /* home page img - box model */
+    #boxModelHomeImg{
+    padding : 0.2em;
+    
+    border-width : 0.3em;
+
+    border-color : DarkBlue;
+    border-style : solid;
+    
+    background : MediumTurquoise ;
+    }
+    
+    /* navigation area - box model*/
+    .navigationArea{
+    background : MediumTurquoise   ;
+    
+    }
+
+    /* navigation area - 마우스올려놓으면 색 변화*/
+    #mouseOver:hover"{
+    background : blue;
+    
+    }
+    
+    /* box에 색을 입히고 마우스이벤트(?)를 적용하는 방법 탐색중..*/
+    
+  </style>
+
+</head>
+
+
+
+<body>
+
+  <header>  
+  	[header area] Recommend book web site 
+  </header>
+
+  <aside> 
+	[aside area] reference contents :  
+    <a href = "http://solt.tistory.com" target = "_blank" title = "극논리주의 짠백이"> 
+     박광호의 기술블로그 (solt.tistory.com) </a>
+  </aside>	
+  
+  <nav> 
+  	[navigation area] menu bar(hyper link) : 
+    <span class="navigationArea"><a href="index.html" id="mouseOver">							홈 페이지</a></span>,  	
+  	<span class="navigationArea"><a href = "joinClient.html" target = "_self">	회원가입</a></span>, 
+    <span class="navigationArea">												로그인</span>, 
+    <span class="navigationArea"><a href="searchBook.html" target="_self">		추천도서 검색</a></span>,  	
+  	<span class="navigationArea">												게시글 작성</span> 
+  </nav>
+  
+
+  <hr>
+
+  <section>
+
+    <h1> Recommend book web site </h1>
+
+    <h2> schedule : 1차 project <time datetime="2018-11-02"> 2018.11.02(금) </time> </h2>
+    <p> 진행률 : <progress value = "30" max = "100"> </progress> 30%</p>
+
+    
+    <!-- 인사말 및 회원가입 link -->
+    <article>
+      <p>안녕하세요. <strong>도서 추천 웹 사이트에 오신것을 환영합니다^^</strong><br>
+      해당 웹 사이트를 이용하기 위해서 회원가입이 필요합니다. </p>
+   
+    </article>
+ 
+    <!-- home page 메인 이미지 -->
+
+    <img id = "boxModelHomeImg" src="img/book-sea(free_commercial).jpg" width= "1000px" height = "500px">
+	
+  </section>
+
+  <hr>
+
+  <footer> 
+    [footer area] 해당 web site는 <mark>박광호(웹 프로그래머)에게 저작권</mark>이 있습니다
+  </footer>
+
+</body>
+
+</html>

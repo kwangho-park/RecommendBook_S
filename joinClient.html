@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title> Join client </title>
+  
+  <meta charset = "utf-8">
+  <meta name="description" content = "사용자의 취향을 고려한 도서 추천 웹 사이트">
+  <meta name="keywords" content = "book">
+
+  <!-- 전체 + tag 단위 css -->
+  <style>
+    @import url(webSiteStyle.css);
+    
+    section{
+    text-align : center;
+    }
+    
+    ol{
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  </style>
+
+
+  <!-- 속성 단위 css -->
+  <style>
+
+  </style>
+</head>
+
+
+<body>
+  <header> 
+  	[header area] Recommend book web site 
+  </header>
+
+  <aside> 
+	[aside area] reference contents :  
+    <a href = "http://solt.tistory.com" target = "_blank" title = "극논리주의 짠백이"> 
+     박광호의 기술블로그 (solt.tistory.com) </a>
+  </aside>	
+  
+  <nav> 
+  	[navigation area] menu bar(hyper link) : 
+    <a href="index.html">[홈 페이지]</a>,  	
+  	<a href = "joinClient.html" target = "_self">[회원가입]</a>, 
+    [로그인], 
+    <a href="searchBook.html" target="_self">[추천도서 검색]</a>,  	
+  	[게시글 작성] 
+  </nav>
+  
+  
+  <hr>
+  
+  <section>
+  
+    <h1> 회원가입 </h1>
+  
+    <!-- 회원가입 절차 order list -->
+    <article>
+      <h1> 절차 </h1>
+ 
+      <ol>
+        <li>회원정보입력</li>
+        <li>개인정보 수집 동의</li>
+        <li>개인정보 확인</li>
+        <li>회원가입 심사</li>
+        <li>합격자 통보</li>
+        <li>추천도서 게시글 작성/검색</li>
+      </ol>
+    </article>
+
+    <!-- 회원가입 양식 -->
+    <article>
+	  <form name = "joinClient" method = "post" >
+
+        <h1> 양식</h1>
+
+        <p><label> 이 름 : <input type = "text" name = "name"> </label></p>
+
+        <p><label> 아이디 : <input type = "text" name = "id"> </label><button>중복확인</button></p>
+
+        <p><label> 비밀번호 : <input type = "password" name = "password"></label></p> 
+
+        <p><label> 생년월일 : <input type = "date" name = "brathday"></label></p> 
+
+        <p><label> 이메일 : <input type = "email" name = "email"> </label></p> 
+
+        <p><label> 주소 : <input type = "text" name = "address"></label></p> 
+
+        <p> <label> 가입경로 : </label> 
+        <select name = "joinProcess" size = "1"> 
+          <option value = "searchInternet"> 인터넷 검색 </option>
+          <option value = "recommended"> 지인추천 </option>
+          <option value = "advertising"> 광고 </option>
+          <option value = "other"> 기타 </option>
+        </select></p>    
+      
+      
+
+        <fieldset>
+          <legend> 광고성 메일 수신여부 </legend>
+      
+          <label> 수신 : <input type = "radio" name = "advertising" checked> </label>
+          <label> 미수신 : <input type = "radio" name = "advertising"> </label>
+        </fieldset>
+      
+      </form>
+      
+    </article>
+
+  </section>
+
+  <hr>
+
+  <footer> 
+    [footer area] 해당 web site는 <mark>박광호(웹 프로그래머)에게 저작권</mark>이 있습니다
+  </footer>
+  
+<body>
+
+</html>
