@@ -14,24 +14,24 @@
   <!-- 전체 + tag 단위 css -->  
   <style>
     @import url(webSiteStyle.css);
-    
-    h1{
-    color : DarkBlue ; 
-    text-align : center;
-    font-size : 3em;
-    }
+ 
     
     /* 웹 페이지 사이즈에 이미지를 조절하기 위한 tag 설정*/
     /* img를 블록화, 좌우 여백 오토 설정, 이미지 폭 항상(padding, border고려) : 95% */
     img {
+    /* 박스 유형 */
     display: block;
+    
+    /* 박스 위치 */
     margin-left: auto;
     margin-right: auto;
    
-    width: 95%;
-
+    /* 박스 사이즈 */
+    box-sizing : border-box;		/* 전체 폭(width) property = 패딩+보더(테두리) */
+    width: 100%;
     }
     
+
   </style>
   
   
@@ -49,21 +49,7 @@
     
     background : MediumTurquoise ;
     }
-    
-    /* navigation area - box model*/
-    .navigationArea{
-    background : MediumTurquoise   ;
-    
-    }
-
-    /* navigation area - 마우스올려놓으면 색 변화*/
-    #mouseOver:hover"{
-    background : blue;
-    
-    }
-    
-    /* box에 색을 입히고 마우스이벤트(?)를 적용하는 방법 탐색중..*/
-    
+      
   </style>
 
 </head>
@@ -72,32 +58,30 @@
 
 <body>
 
+  <!-- fixed bar -->
+  <div id="fixedBar">		
+  
   <header>  
-  	[header area] Recommend book web site 
+  	<h1> Recommend book web site </h1>
   </header>
 
-  <aside> 
-	[aside area] reference contents :  
-    <a href = "http://solt.tistory.com" target = "_blank" title = "극논리주의 짠백이"> 
-     박광호의 기술블로그 (solt.tistory.com) </a>
-  </aside>	
-  
-  <nav> 
-  	[navigation area] menu bar(hyper link) : 
-    <span class="navigationArea"><a href="index.html" id="mouseOver">							홈 페이지</a></span>,  	
-  	<span class="navigationArea"><a href = "joinClient.html" target = "_self">	회원가입</a></span>, 
-    <span class="navigationArea">												로그인</span>, 
-    <span class="navigationArea"><a href="searchBook.html" target="_self">		추천도서 검색</a></span>,  	
-  	<span class="navigationArea">												게시글 작성</span> 
+  <!-- [navigation area] menu bar -->
+  <nav>  
+    <span class="navigationArea" id="mouseOver"><a href="index.html" >							홈 페이지</a></span>,  	
+  	<span class="navigationArea" id="mouseOver"><a href = "joinClient.html" target = "_self">	회원가입</a></span>, 
+    <span class="navigationArea" id="mouseOver">												로그인</span>, 
+    <span class="navigationArea" id="mouseOver"><a href="searchBook.html" target="_self">		추천도서 검색</a></span>,  	
+  	<span class="navigationArea" id="mouseOver">												게시글 작성</span> 
   </nav>
-  
 
-  <hr>
+  </div>
+  <!-- fixed bar END-->
+
+
 
   <section>
-
-    <h1> Recommend book web site </h1>
-
+    <br><br><br><br><br><br><br><br><br>
+    
     <h2> schedule : 1차 project <time datetime="2018-11-02"> 2018.11.02(금) </time> </h2>
     <p> 진행률 : <progress value = "30" max = "100"> </progress> 30%</p>
 
@@ -116,9 +100,18 @@
   </section>
 
   <hr>
+  
+  
+  <!-- reference contents -->
+  <aside> 
+    참고 : 박광호의 기술 블로그<a href = "http://solt.tistory.com" target = "_blank" title = "극논리주의 짠백이">
+    (solt.tistory.com) </a>
+  </aside>		
 
+
+   <!-- 저작권 정보, 연락처 등-->
   <footer> 
-    [footer area] 해당 web site는 <mark>박광호(웹 프로그래머)에게 저작권</mark>이 있습니다
+    저작권 : recommend book web site는 <mark>박광호(웹 프로그래머)에게 저작권</mark>이 있습니다
   </footer>
 
 </body>

@@ -35,35 +35,34 @@
 
 
 <body>
-  <header> 
-  	[header area] Recommend book web site 
+  <!-- fixed bar -->
+  <div id="fixedBar">		
+  
+  <header>  
+  	<h1> Recommend book web site </h1>
   </header>
 
-  <aside> 
-	[aside area] reference contents :  
-    <a href = "http://solt.tistory.com" target = "_blank" title = "극논리주의 짠백이"> 
-     박광호의 기술블로그 (solt.tistory.com) </a>
-  </aside>	
-  
-  <nav> 
-  	[navigation area] menu bar(hyper link) : 
-    <a href="index.html">[홈 페이지]</a>,  	
-  	<a href = "joinClient.html" target = "_self">[회원가입]</a>, 
-    [로그인], 
-    <a href="searchBook.html" target="_self">[추천도서 검색]</a>,  	
-  	[게시글 작성] 
+  <!-- [navigation area] menu bar -->
+  <nav>  
+    <span class="navigationArea" id="mouseOver"><a href="index.html" >							홈 페이지</a></span>,  	
+  	<span class="navigationArea" id="mouseOver"><a href = "joinClient.html" target = "_self">	회원가입</a></span>, 
+    <span class="navigationArea" id="mouseOver">												로그인</span>, 
+    <span class="navigationArea" id="mouseOver"><a href="searchBook.html" target="_self">		추천도서 검색</a></span>,  	
+  	<span class="navigationArea" id="mouseOver">												게시글 작성</span> 
   </nav>
+
+  </div>
+  <!-- fixed bar END-->
   
-  
-  <hr>
+  <br><br><br><br><br><br><br><br><br>
   
   <section>
   
-    <h1> 회원가입 </h1>
+    <h2> 회원가입 </h2>
   
     <!-- 회원가입 절차 order list -->
     <article>
-      <h1> 절차 </h1>
+      <h3> 절차 </h3>
  
       <ol>
         <li>회원정보입력</li>
@@ -71,7 +70,8 @@
         <li>개인정보 확인</li>
         <li>회원가입 심사</li>
         <li>합격자 통보</li>
-        <li>추천도서 게시글 작성/검색</li>
+        <li>게시글 작성</li>
+        <li>추천도서 검색</li>
       </ol>
     </article>
 
@@ -79,7 +79,7 @@
     <article>
 	  <form name = "joinClient" method = "post" >
 
-        <h1> 양식</h1>
+        <h3> 양식</h3>
 
         <p><label> 이 름 : <input type = "text" name = "name"> </label></p>
 
@@ -118,8 +118,16 @@
 
   <hr>
 
+  <!-- reference contents -->
+  <aside> 
+    참고 : 박광호의 기술 블로그<a href = "http://solt.tistory.com" target = "_blank" title = "극논리주의 짠백이">
+    (solt.tistory.com) </a>
+  </aside>		
+
+
+   <!-- 저작권 정보, 연락처 등-->
   <footer> 
-    [footer area] 해당 web site는 <mark>박광호(웹 프로그래머)에게 저작권</mark>이 있습니다
+    저작권 : recommend book web site는 <mark>박광호(웹 프로그래머)에게 저작권</mark>이 있습니다
   </footer>
   
 <body>
