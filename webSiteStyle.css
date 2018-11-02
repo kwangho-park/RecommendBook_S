@@ -8,6 +8,10 @@ color : DarkBlue ;
 text-align : center;
 font-size : 3em;
 }
+
+h2{
+text-align : center;	
+}
     
 body {
 background-color : PowderBlue;
@@ -23,27 +27,20 @@ hr{
 /* nav bar를 center에 맞추기 위한 설정*/
 /* ?정확하게 맞추는 방법은? */
 nav{
-margin-left: 35%;
+	margin-left: 35%;
 }
+
+
+nav a{
+	text-decoration: none;  /* hyper text decoration 제거*/  	
+}
+
    
    
 /*/ attribute 단위 /*/
+
    
-   
-/* navigation area */
-    
-/* [nav] box model */
-.navigationArea{
-background : MediumTurquoise;
-    
-}
-/* [nav] mouse over */
-#mouseOver:hover{
-background : red;
-}
-    
-    
-/* fixedBar */
+/* fixedBar : header + nav */ 
 /*? body tag의 사이즈에 맞추기가 어려움.... body tag에 사이즈가 맞는 home page img와 실행 결과가 다름 */
 #fixedBar{
     
@@ -64,6 +61,22 @@ padding : 20px;
     
 /* 기타 */
 background : skyblue;
+
 }
-/* fixedBar END */
+
+
+
+
+
+/* navigation area */
+
+/* box model */
+.navigationArea{
+background : MediumTurquoise;
+    
+}
+/* mouse over */
+#mouseOver:hover{
+background : red;
+}
    

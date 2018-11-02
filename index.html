@@ -11,10 +11,18 @@
   <meta name="keywords" content = "book">
 
 
-  <!-- 전체 + tag 단위 css -->  
+  <!-- 전체 영역 단위 CSS : 외부파일-->
   <style>
-    @import url(webSiteStyle.css);
+  	@import url(webSiteStyle.css);
+  </style>
+
+  <!-- tag 단위 css -->  
+  <style>
  
+    article{
+    text-align : center;
+    }
+    
     
     /* 웹 페이지 사이즈에 이미지를 조절하기 위한 tag 설정*/
     /* img를 블록화, 좌우 여백 오토 설정, 이미지 폭 항상(padding, border고려) : 95% */
@@ -30,6 +38,7 @@
     box-sizing : border-box;		/* 전체 폭(width) property = 패딩+보더(테두리) */
     width: 100%;
     }
+    
     
 
   </style>
@@ -67,10 +76,10 @@
 
   <!-- [navigation area] menu bar -->
   <nav>  
-    <span class="navigationArea" id="mouseOver"><a href="index.html" >							홈 페이지</a></span>,  	
-  	<span class="navigationArea" id="mouseOver"><a href = "joinClient.html" target = "_self">	회원가입</a></span>, 
-    <span class="navigationArea" id="mouseOver">												로그인</span>, 
-    <span class="navigationArea" id="mouseOver"><a href="searchBook.html" target="_self">		추천도서 검색</a></span>,  	
+    <span class="navigationArea" id="mouseOver"><a href="index.html" >							홈 페이지</a></span>  	
+  	<span class="navigationArea" id="mouseOver"><a href = "joinClient.html" target = "_self">	회원가입</a></span>
+    <span class="navigationArea" id="mouseOver">												로그인</span> 
+    <span class="navigationArea" id="mouseOver"><a href="searchBook.html" target="_self">		추천도서 검색</a></span>  	
   	<span class="navigationArea" id="mouseOver">												게시글 작성</span> 
   </nav>
 
@@ -82,19 +91,20 @@
   <section>
     <br><br><br><br><br><br><br><br><br>
     
-    <h2> schedule : 1차 project <time datetime="2018-11-02"> 2018.11.02(금) </time> </h2>
-    <p> 진행률 : <progress value = "30" max = "100"> </progress> 30%</p>
-
     
-    <!-- 인사말 및 회원가입 link -->
     <article>
+    <h2> schedule : 1차 project <time datetime="2018-11-02"> 2018.11.02(금) </time> </h2>
+    <p> 진행률 : <progress value = "100" max = "100"> </progress> 100%</p>
+
+
+    <!-- 인사말 및 회원가입 link -->
       <p>안녕하세요. <strong>도서 추천 웹 사이트에 오신것을 환영합니다^^</strong><br>
       해당 웹 사이트를 이용하기 위해서 회원가입이 필요합니다. </p>
    
     </article>
  
+ 
     <!-- home page 메인 이미지 -->
-
     <img id = "boxModelHomeImg" src="img/book-sea(free_commercial).jpg" width= "1000px" height = "500px">
 	
   </section>
