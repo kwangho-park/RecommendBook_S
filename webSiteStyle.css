@@ -4,30 +4,31 @@
 /*/ tag 단위/ */
 
 h1{
-color : DarkBlue ; 
-text-align : center;
-font-size : 3em;
+	color : DarkBlue ; 
+	text-align : center;
+	font-size : 3em;
 }
 
 h2{
-text-align : center;	
+	text-align : center;	
 }
     
 body {
-background-color : PowderBlue;
-margin-left: 100px;
-margin-right: 100px;
-border : 3px solid gray;
+	background-color : PowderBlue;
+	margin-left: 100px;
+	margin-right: 100px;
+	border : 3px solid gray;
 }
 
 hr{
   border : 3px solid gray;
 }
 
-/* nav bar를 center에 맞추기 위한 설정*/
-/* ?정확하게 맞추는 방법은? */
+
 nav{
-	margin-left: 35%;
+	
+	/* nav내부의 box의 배치를 위한 설정 */
+	text-align : center;	/* [중요] box안에 있는 inline box를 text 취급!! */
 }
 
 
@@ -39,44 +40,41 @@ nav a{
    
 /*/ attribute 단위 /*/
 
-   
-/* fixedBar : header + nav */ 
-/*? body tag의 사이즈에 맞추기가 어려움.... body tag에 사이즈가 맞는 home page img와 실행 결과가 다름 */
-#fixedBar{
-    
-/* 유형(타입)과 위치 */
-display : block;
-    
-top : 10px;
-position : fixed;
-    
-margin-left: auto;
-margin-right: auto;
-    
-/* 사이즈 */
-box-sizing : border-box;
-width : 85%;					/* ? 요녀석을 조정해야함 */
-padding : 20px;
-    
-    
-/* 기타 */
-background : skyblue;
+
+.navBar{
+        
+	/* 유형(타입)과 위치 */
+	display : block;
+
+	margin-left: auto;
+	margin-right: auto;
+
+	box-sizing : border-box;
+	width : 100%;				
+
+
+	/* box style */
+	padding : 20px;    
+	background : skyblue;
 
 }
-
-
-
 
 
 /* navigation area */
 
 /* box model */
 .navigationArea{
-background : MediumTurquoise;
+	
+	/* box style */
+	padding : 5px;
+	margin : 5px;
+	
+	border : 1px solid gray;
+	background : MediumTurquoise;
     
 }
 /* mouse over */
 #mouseOver:hover{
-background : red;
+	background : red;
 }
    

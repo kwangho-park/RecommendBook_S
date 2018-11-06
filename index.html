@@ -23,10 +23,16 @@
     text-align : center;
     }
     
-    
-    /* 웹 페이지 사이즈에 이미지를 조절하기 위한 tag 설정*/
-    /* img를 블록화, 좌우 여백 오토 설정, 이미지 폭 항상(padding, border고려) : 95% */
-    img {
+
+
+  </style>
+  
+  
+  <!-- 속성 단위 css -->  
+  <style>
+
+    /* home page img - box model */
+    .HomeImg{
     /* 박스 유형 */
     display: block;
     
@@ -37,29 +43,20 @@
     /* 박스 사이즈 */
     box-sizing : border-box;		/* 전체 폭(width) property = 패딩+보더(테두리) */
     width: 100%;
-    }
     
     
-
-  </style>
-  
-  
-  <!-- 속성 단위 css -->  
-  <style>
-
-    /* home page img - box model */
-    #boxModelHomeImg{
+    /* box style */      
     padding : 0.2em;
     
     border-width : 0.3em;
-
     border-color : DarkBlue;
     border-style : solid;
     
     background : MediumTurquoise ;
     }
-      
   </style>
+  
+  
 
 </head>
 
@@ -67,8 +64,8 @@
 
 <body>
 
-  <!-- fixed bar -->
-  <div id="fixedBar">		
+  <!-- nav bar -->
+  <div class="navBar">		
   
   <header>  
   	<h1> Recommend book web site </h1>
@@ -84,13 +81,11 @@
   </nav>
 
   </div>
-  <!-- fixed bar END-->
+  <!-- nav bar END-->
 
 
 
   <section>
-    <br><br><br><br><br><br><br><br><br>
-    
     
     <article>
     <h2> schedule : 1차 project <time datetime="2018-11-02"> 2018.11.02(금) </time> </h2>
@@ -98,14 +93,14 @@
 
 
     <!-- 인사말 및 회원가입 link -->
-      <p>안녕하세요. <strong>도서 추천 웹 사이트에 오신것을 환영합니다^^</strong><br>
+    <p>안녕하세요. <strong>도서 추천 웹 사이트에 오신것을 환영합니다^^</strong><br>
       해당 웹 사이트를 이용하기 위해서 회원가입이 필요합니다. </p>
    
     </article>
  
  
     <!-- home page 메인 이미지 -->
-    <img id = "boxModelHomeImg" src="img/book-sea(free_commercial).jpg" width= "1000px" height = "500px">
+    <img class = "HomeImg" src="img/book-sea(free_commercial).jpg" width= "1000px" height = "500px">
 	
   </section>
 
