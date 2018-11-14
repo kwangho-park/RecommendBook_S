@@ -12,12 +12,11 @@
   <!-- 전체 + tag 단위 css -->
   <style>
     @import url(webSiteStyle.css);
-    
+
     h3{
     text-align : center;
-
     }
-    
+	
     ol{
     display: table;
     margin-left: auto;
@@ -32,23 +31,14 @@
   <style>
   
 	.joinInfo{
-
-	text-align : center;
-/*
-	margin-left:auto; 
-	margin-right:auto;
-*/	
-
-
-/*
-width로 움직이는 이유는???
-*/
-    display: inline-block;
+    display : inline-block;
+    
+    /* web form의 중앙정렬를 맞추기 위한 설정*/
+	width : 45%;
     text-align: right;
-
-    width: 530px;
-
-	color : red;		/* 테스트 용 - 삭제 예정*/
+	}
+	.mail{
+	text-align : center;
 	}  
 	
   </style>
@@ -103,43 +93,47 @@ width로 움직이는 이유는???
 
         <h3> 양식</h3>
 
-		<div>
+
 		
-        <p><label class="joinInfo"> 이    름 : </label><input type = "text" name = "name"></p>
+        <p><label class="joinInfo"> 이&nbsp; &nbsp; 름&nbsp; : &nbsp;</label>			<input type = "text" name = "name"></p>
 
-        <p><label class="joinInfo"> 아 이 디 : </label><input type = "text" name = "id"> <button>중복확인</button></p>
+        <p><label class="joinInfo"> 아 이 디&nbsp; : &nbsp;</label>					<input type = "text" name = "id"> <button>중복확인</button></p>
 
-        <p><label class="joinInfo"> 비밀번호 : </label><input type = "password" name = "password"></p> 
+        <p><label class="joinInfo"> 비밀번호 : &nbsp;</label>							<input type = "password" name = "password"></p> 
 
-        <p><label class="joinInfo"> 생년월일 : </label><input type = "date" name = "brathday"></p> 
+        <p><label class="joinInfo"> 생년월일 : &nbsp;</label>							<input type = "date" name = "brathday"></p> 
 
-        <p><label class="joinInfo"> 이 메 일 : </label><input type = "email" name = "email"></p> 
+        <p><label class="joinInfo"> 이 메 일&nbsp; : &nbsp;</label>					<input type = "email" name = "email"></p> 
 
-        <p><label class="joinInfo"> 주소 : </label><input type = "text" name = "address"></p> 
+        <p><label class="joinInfo"> 주&nbsp; &nbsp; &nbsp;소&nbsp; : &nbsp;</label>	<input type = "text" name = "address"></p> 
 
-        <p><label class="joinInfo"> 가입경로 : </label> 
+        <p><label class="joinInfo"> 가입경로&nbsp; : &nbsp;</label> 
         <select name = "joinProcess" size = "1"> 
           <option value = "searchInternet"> 인터넷 검색 </option>
           <option value = "recommended"> 지인추천 </option>
           <option value = "advertising"> 광고 </option>
           <option value = "other"> 기타 </option>
         </select></p>    
-      
-      
 
+
+		<div class="mail">
+		
         <fieldset>
           <legend> 광고성 메일 수신여부 </legend>
       
-          <label> 수신 : <input type = "radio" name = "advertising" checked> </label>
-          <label> 미수신 : <input type = "radio" name = "advertising"> </label>
+      	  <p>
+          <label> 수신 : </label>		<input type = "radio" name = "advertising" checked> 
+          <label> 미수신 : </label>	<input type = "radio" name = "advertising">
+          </p>
         </fieldset>
-        
+
         <br>
         <button>회원가입 신청</button>
         <br>
         
         </div>
         
+
       </form>
       
     </article>
