@@ -48,6 +48,7 @@
 
 
 <body>
+
   <!-- nav bar -->
   <div class="navBar">		
 
@@ -95,17 +96,18 @@
 
 
 		
-        <p><label class="joinInfo"> 이&nbsp; &nbsp; 름&nbsp; : &nbsp;</label>			<input type = "text" name = "name"></p>
+        <p><label class="joinInfo"> 이&nbsp; &nbsp; 름&nbsp; : &nbsp;</label>			<input type = "text" name = "name" id = "name"></p>
 
-        <p><label class="joinInfo"> 아 이 디&nbsp; : &nbsp;</label>					<input type = "text" name = "id"> <button>중복확인</button></p>
+        <p><label class="joinInfo"> 아 이 디&nbsp; : &nbsp;</label>					<input type = "text" name = "id" id = "id"> <button>중복확인</button></p>
 
-        <p><label class="joinInfo"> 비밀번호 : &nbsp;</label>							<input type = "password" name = "password"></p> 
+        <p><label class="joinInfo"> 비밀번호 : &nbsp;</label>							<input type = "password" name = "password" id="password"></p> 
 
-        <p><label class="joinInfo"> 생년월일 : &nbsp;</label>							<input type = "date" name = "brathday"></p> 
+        <p><label class="joinInfo"> 생년월일 : &nbsp;</label>							<input type = "date" name = "brathday" id="brathday"></p> 
 
-        <p><label class="joinInfo"> 이 메 일&nbsp; : &nbsp;</label>					<input type = "email" name = "email"></p> 
+        <p><label class="joinInfo"> 이 메 일&nbsp; : &nbsp;</label>					<input type = "email" name = "email" id="email"></p> 
 
-        <p><label class="joinInfo"> 주&nbsp; &nbsp; &nbsp;소&nbsp; : &nbsp;</label>	<input type = "text" name = "address"></p> 
+        <p><label class="joinInfo"> 주&nbsp; &nbsp; &nbsp;소&nbsp; : &nbsp;</label>	<input type = "text" name = "address" id="address"></p> 
+
 
         <p><label class="joinInfo"> 가입경로&nbsp; : &nbsp;</label> 
         <select name = "joinProcess" size = "1"> 
@@ -128,7 +130,7 @@
         </fieldset>
 
         <br>
-        <button>회원가입 신청</button>
+        <input type="button" value="회원가입신청" onclick="filter()">
         <br>
         
         </div>
@@ -154,6 +156,70 @@
     저작권 : recommend book web site는 <mark>박광호(웹 프로그래머)에게 저작권</mark>이 있습니다
   </footer>
   
+ 
+ 
+ 
+  <!-- 회원정보를 필터링(구별)하는 javascript 로직 -->
+ 	
+  <script>
+  /* [upgrade] 추후 유지보수의 편의성을 위해 외부 js파일로 분류예정 */
+  
+  	/* 필터링 정의(임시) */
+	/*
+	name = 문자열
+	id = 문자열
+	password = 숫자
+	email = 이메일 형식 (임시 : 문자열 중 @ 포함되어있는지 체크)
+	address = 문자열
+	*/
+  
+  function filter(){
+		
+		var name = document.getElementById("name");
+		var id = document.getElementById("id");
+		var password = document.getElementById("password");
+		var brathday = document.getElementById("brathday");		// 필터링 적용 전
+		var email = document.getElementById("email");
+		var address = document.getElementById("address");		// 필터링 적용 전
+
+		/* [??] 이메일의 유효성을 검사하는 정규식 */
+		// 정규식에 대해 공부한 이후 진행
+//		var resultEmail = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;		
+//		var resultEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+
+		
+		
+		/* [??] <input> type attribute*/
+		/*
+		HTML의 date, password, email 속성에 따른 제어방법은? 
+		*/
+
+		
+//[test]		console.log(isNaN(password));			// 숫자, 문자입력이 모두 문자로 취급됨 (<input> attribute가 password라서 그런것으로 추정됨)
+
+//[test]		console.log("wang".indexOf("k"));		// 문자열 내부의 문자열을 탐색하는 string의 객체 메소드
+
+
+
+		if(isNaN(name)){				// isNaN 라이브러리 메소드 : not a number : 숫자가 아닐경우 true반환
+			alert("'이름'을 문자로 입력하셨습니다^^");
+		
+			if(isNaN(id)){
+				alert("'id'을 문자로 입력하셨습니다^^");
+						
+			}else{
+				alert("'id'가 숫자입니다. 좋은 말로 할 때 문자로 입력해주실래요?^^");	
+			}
+		}else{
+			alert("'이름'이 숫자입니다. 좋은 말로 할 때 문자로 입력해주실래요?^^");
+		}
+
+  
+  } // filter() END
+  
+  </script>
+ 
+
 <body>
 
 </html>
