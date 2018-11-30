@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title> Join </title>
+  
+  <meta charset = "utf-8">
+  <meta name="description" content = "사용자의 취향을 고려한 도서 추천 웹 사이트">
+  <meta name="keywords" content = "book">
+
+  <!-- 전체 + tag 단위 css -->
+  <style>
+    @import url(webSiteStyle.css);
+
+    h3{
+    text-align : center;
+    }
+	
+    ol{
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+ 	}
+
+
+  </style>
+
+
+  <!-- property(속성) 단위 css -->
+  <style>
+  
+	.joinInfo{
+    display : inline-block;
+    
+    /* web form의 중앙정렬를 맞추기 위한 설정*/
+	width : 45%;
+    text-align: right;
+	}
+	.mail{
+	text-align : center;
+	}  
+	
+  </style>
+</head>
+
+<!------------------------------------------------------------------------------------------------------>
+
+
+<body>
+
+  <!-- nav bar -->
+  <div class="navBar">		
+
+  <header>  
+  	<h1> Recommend book web site </h1>
+  </header>
+
+  <!-- [navigation area] menu bar -->
+  <nav>  
+    <span class="navigationArea" id="mouseOver"><a href="index.html" >							홈 페이지</a></span>  	
+  	<span class="navigationArea" id="mouseOver"><a href="join.html" target = "_self">			회원가입</a></span>
+    <span class="navigationArea" id="mouseOver"><a href="login.html" target = "_self">			로그인</a></span> 
+    <span class="navigationArea" id="mouseOver"><a href="searchBook.html" target="_self">		추천도서 검색</a></span>  	
+  	<span class="navigationArea" id="mouseOver">												게시글 작성</span> 
+  </nav>
+
+  </div>
+  <!-- nav bar END-->
+  
+
+  <section>
+  
+    <h2> 회원가입 </h2>
+  
+    <!-- 회원가입 절차 order list -->
+    <article>
+      <h3> 절차 </h3>
+ 
+      <ol>
+        <li>회원정보입력</li>
+        <li>개인정보 수집 동의</li>
+        <li>개인정보 확인</li>
+        <li>회원가입 심사</li>
+        <li>합격자 통보</li>
+        <li>게시글 작성</li>
+        <li>추천도서 검색</li>
+      </ol>
+    </article>
+
+    <!-- 회원가입 양식 -->
+    <article>
+	  <form name = "joinClient" method = "post" >
+
+        <h3> 양식</h3>
+
+
+		
+        <p><label class="joinInfo"> 이&nbsp; &nbsp; 름&nbsp; : &nbsp;</label>			<input type = "text" name = "name" id = "name"></p>
+
+        <p><label class="joinInfo"> 아 이 디&nbsp; : &nbsp;</label>					<input type = "text" name = "id" id = "id"> <button>중복확인</button></p>
+
+        <p><label class="joinInfo"> 비밀번호 : &nbsp;</label>							<input type = "password" name = "password" id="password"></p> 
+
+        <p><label class="joinInfo"> 생년월일 : &nbsp;</label>							<input type = "date" name = "brathday" id="brathday"></p> 
+
+        <p><label class="joinInfo"> 이 메 일&nbsp; : &nbsp;</label>					<input type = "email" name = "email" id="email"></p> 
+
+        <p><label class="joinInfo"> 주&nbsp; &nbsp; &nbsp;소&nbsp; : &nbsp;</label>	<input type = "text" name = "address" id="address"></p> 
+
+
+        <p><label class="joinInfo"> 가입경로&nbsp; : &nbsp;</label> 
+        <select name = "joinProcess" size = "1"> 
+          <option value = "searchInternet"> 인터넷 검색 </option>
+          <option value = "recommended"> 지인추천 </option>
+          <option value = "advertising"> 광고 </option>
+          <option value = "other"> 기타 </option>
+        </select></p>    
+
+
+		<div class="mail">
+		
+        <fieldset>
+          <legend> 광고성 메일 수신여부 </legend>
+      
+      	  <p>
+          <label> 수신 : </label>		<input type = "radio" name = "advertising" checked> 
+          <label> 미수신 : </label>	<input type = "radio" name = "advertising">
+          </p>
+        </fieldset>
+
+        <br>
+        <input type="button" value="회원가입신청" onclick="filter()">
+        <br>
+        
+        </div>
+        
+
+      </form>
+      
+    </article>
+
+  </section>
+
+  <hr>
+
+  <!-- reference contents -->
+  <aside> 
+    참고 : 박광호의 기술 블로그<a href = "http://solt.tistory.com" target = "_blank" title = "극논리주의 짠백이">
+    (solt.tistory.com) </a>
+  </aside>		
+
+
+   <!-- 저작권 정보, 연락처 등-->
+  <footer> 
+    저작권 : recommend book web site는 <mark>박광호(웹 프로그래머)에게 저작권</mark>이 있습니다
+  </footer>
+  
+ 
+ 
+ 
+  <!-- 회원정보를 필터링(구별)하는 javascript 로직 -->
+ 	
+  <script>
+  /* [upgrade] 추후 유지보수의 편의성을 위해 외부 js파일로 분류예정 */
+  
+  	/* 필터링 정의(임시) */
+	/*
+	name = 문자열
+	id = 문자열
+	password = 숫자
+	email = 이메일 형식 (임시 : 문자열 중 @ 포함되어있는지 체크)
+	address = 문자열
+	*/
+  
+  function filter(){
+		
+		var name = document.getElementById("name");
+		var id = document.getElementById("id");
+		var password = document.getElementById("password");
+		var brathday = document.getElementById("brathday");		// 필터링 적용 전
+		var email = document.getElementById("email");
+		var address = document.getElementById("address");		// 필터링 적용 전
+
+		/* [??] 이메일의 유효성을 검사하는 정규식 */
+		// 정규식에 대해 공부한 이후 진행
+//		var resultEmail = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;		
+//		var resultEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+
+		
+		
+		/* [??] <input> type attribute*/
+		/*
+		HTML의 date, password, email 속성에 따른 제어방법은? 
+		*/
+
+		
+//[test]		console.log(isNaN(password));			// 숫자, 문자입력이 모두 문자로 취급됨 (<input> attribute가 password라서 그런것으로 추정됨)
+
+//[test]		console.log("wang".indexOf("k"));		// 문자열 내부의 문자열을 탐색하는 string의 객체 메소드
+
+
+
+		if(isNaN(name)){				// isNaN 라이브러리 메소드 : not a number : 숫자가 아닐경우 true반환
+			alert("'이름'을 문자로 입력하셨습니다^^");
+		
+			if(isNaN(id)){
+				alert("'id'을 문자로 입력하셨습니다^^");
+						
+			}else{
+				alert("'id'가 숫자입니다. 좋은 말로 할 때 문자로 입력해주실래요?^^");	
+			}
+		}else{
+			alert("'이름'이 숫자입니다. 좋은 말로 할 때 문자로 입력해주실래요?^^");
+		}
+
+  
+  
+  } // filter() END
+  
+  </script>
+ 
+
+<body>
+
+</html>
