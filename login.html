@@ -29,7 +29,7 @@
 
 </head>
 
-<body>
+<body onload="init()">
 
   <!-- nav bar -->
   <div class="navBar">		
@@ -56,10 +56,21 @@
   <section>
     
     <article>
-    <h1>로그인 페이지에 오신것을 환영합니다.</h1>
+    <h2>로그인 페이지에 오신것을 환영합니다.</h2>
     </article>
 
 
+	<article>
+		<form>
+		
+    	<p align="center"><label> id (문자) </label>	<input type = "text" id = "id"></p>
+    	<p align="center"><label> pw (숫자) </label>	<input type = "password" id = "pw"></p>
+    	
+    	<p align="center"><input type="button" id="loginBtn" value="로그인"></p>
+    	
+    	
+		</form>
+	</article>
 
   </section>
 
@@ -73,10 +84,47 @@
   </aside>		
 
 
-   <!-- 저작권 정보, 연락처 등-->
+  <!-- 저작권 정보, 연락처 등-->
   <footer> 
     저작권 : recommend book web site는 <mark>박광호(웹 프로그래머)에게 저작권</mark>이 있습니다
   </footer>
+  
+  <script>
+  
+  var loginBtn;
+  
+  /* web browser에 웹 페이지가 로딩 시 동작하는 함수 */
+  // <body> tag의 attribute인 onclick 프로퍼티에 등록
+  function init(){
+	  loginBtn = document.getElementById("loginBtn");
+	  
+	  loginBtn.addEventListener("click",login);
+  } // init() END
+  
+  function login(){
+	    var id = document.getElementById("id");
+	    var pw = document.getElementById("pw");
+	    
+	    
+	    // id, pw 필터링 logic
+	    // value property : 입력된 값이 저장되어있는 변수
+	    
+	    if((id.value != "") && isNaN(id.value)){		// isNaN : is + Not a Number : 문자열일경우 true
+	    	if(pw.value!="" && !isNaN(pw.value)){
+	    		alert("로그인 성공!!");
+	    	}else{
+	    		alert("PW를 숫자로 입력하세요");
+	    	}
+	    }else{
+	    	alert("ID를 문자로 입력하세요!!");
+	    }
+
+
+  } // login() END
+  
+  </script>
+
+
 
 </body>
 

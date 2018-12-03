@@ -23,14 +23,14 @@
 </head>
 
 
-<body>
+<body onload="init()">
 
   <!-- 도서를 추천받기 위한 정보 검색 리스트 -->
   <h2> 당신의 도서 취향은? </h2>    
   
   <p> 
   <label> 1. 분류 : </label> 
-    <select name = "bookType" size = "1"> 
+    <select id="bookType" name = "bookType" size = "1"> 
       <option value = "fiction"> 소설 </option>
       <option value = "essay"> 에세이/시 </option>
       <option value = "humanities"> 인문학 </option>
@@ -47,23 +47,59 @@
   
   <p>  
   <label> 2. 취향 : </label> 
-    <select name = "favorite" size = "1"> 
+    <select id="favorite" name = "favorite" size = "1"> 
       <option value = "romance"> 달달한 로맨스 </option>
       <option value = "wit"> 재미있는 유머 </option>
       <option value = "story"> 탄탄한 스토리 </option>
+      <option value = "detective"> 추리 </option>
+      <option value = "action"> 액션 </option>
     </select>      
   </p>
   
   <p>
   <label> 3. 난이도 : </label> 
-    <select name = "level" size = "1"> 
-      <option value = "normal"> 보통 </option>
-      <option value = "low"> 난이도 하 </option>
+    <select id="level" name = "level" size = "1">
+      <option value = "high"> 상 </option> 
+      <option value = "normal"> 중 </option>
+      <option value = "low"> 하 </option>
     </select>  
     
-  </p>   
+  </p>
+     
+  
+  <input type="button" id="searchBtn"value="도서검색">
 
-
+  <script>
+  
+  var bookType;
+  var favorite;
+  var level;
+  
+  var searchBtn;
+  
+  /* web browser에 web page를 로딩 시 초기화하는 함수 */
+  function init(){
+	  bookType  = document.getElementById("bookType");
+	  favorite  = document.getElementById("favorite");
+	  level     = document.getElementById("level");
+	  
+	  searchBtn = document.getElementById("searchBtn");
+	  
+	
+	  searchBtn.addEventListener("click",search);		// 도서검색 button 클릭시 동작하는 event listener (함수)추가
+  }
+  
+  /* 도서검색 버튼 클릭시 동작하는 함수*/
+  function search(){
+	  	  
+	  alert("당신이 선택한 도서분류는 "+bookType.value+" 입니다");
+	  alert("당신이 선택한 취향은 "+favorite.value+" 입니다");
+	  alert("당신이 선택한 난이도는 "+level.value+" 입니다");
+  }
+  
+  
+  
+  </script>
 
 </body>
 </html>
