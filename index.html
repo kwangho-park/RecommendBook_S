@@ -52,14 +52,69 @@
     }
   </style>
 
+
+
+  <script>
+  
+  var mouseEvent;
+//  var flag = false;
+  var flag = 0;
+  
+  function init(){
+	  mouseEvent = document.getElementById("homeEvent");
+	  mouseEvent.addEventListener("mouseover",over);
+	  mouseEvent.addEventListener("mouseout",out);
+	  mouseEvent.addEventListener("click",click);
+  }
+  
+  function over(){
+	  mouseEvent.style.backgroundColor = "red";
+  }
+  
+  function out(){
+	 
+	  if(flag == false){
+		  mouseEvent.style.backgroundColor = "MediumTurquoise";
+	  }
+  }
+  
+  function click(){
+	  flag = !flag;							// true or false를 반복  
+	  console.log("함수 실행 확인용");			// 실행 후 사라지는 이유는??
+	  console.log(flag);					// 실행 후 사라지는 이유는??
+  }
+  
+  console.log("스크립트 실행 확인용");
+  console.log(flag);
+  
+  
+  </script>
+
+
+  <style>
+	/* test 중 */
+	
+	#homeEvent{
+	
+	/* box style */
+	padding : 5px;
+	margin : 5px;
+	
+	border : 1px solid gray;
+	background : MediumTurquoise;
+    
+	}  
+  </style>
+  
+  
 </head>
 
 
 
-<body>
+<body onload="init()">
 
   <!-- nav bar -->
-  <div class="navBar">		
+  <div class="mainArea">		
   
   <header>  
   	<h1> Recommend book web site </h1>
@@ -67,12 +122,15 @@
 
   <!-- [navigation area] menu bar -->
   <nav>  
-    <span class="navigationArea" id="mouseOver"><a href="index.html" >							홈 페이지</a></span>  	
-  	<span class="navigationArea" id="mouseOver"><a href="join.html" target = "_self">			회원가입</a></span>
-    <span class="navigationArea" id="mouseOver"><a href="login.html" target = "_self">			로그인</a></span> 
-    <span class="navigationArea" id="mouseOver"><a href="searchBook.html" target="_self">		추천도서 검색</a></span>  	
-  	<span class="navigationArea" id="mouseOver">												게시글 작성</span> 
+    <span><a id="homeEvent" href="index.html" >											홈 페이지</a></span>  	
+
+  	<span class="navArea" id="mouseOver"><a href="join.html" target = "_self">			회원가입</a></span>
+    <span class="navArea" id="mouseOver"><a href="login.html" target = "_self">			로그인</a></span> 
+    <span class="navArea" id="mouseOver"><a href="searchBook.html" target="_self">		추천도서 검색</a></span>  	
+  	<span class="navArea" id="mouseOver">												게시글 작성</span> 
   </nav>
+  
+  
 
   </div>
   <!-- nav bar END-->
