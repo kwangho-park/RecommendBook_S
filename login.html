@@ -11,45 +11,56 @@
   <meta name="keywords" content = "book">
 
 
+  
   <!-- 전체 영역 단위 CSS : 외부파일-->
-  <style>
-  	@import url(webSiteStyle.css);
-  </style>
-
+  <link href="webSiteStyle.css" type="text/css" rel="stylesheet">
+  
+  
   <!-- tag 단위 css -->  
   <style>
- 
   </style>
   
   
   <!-- 속성 단위 css -->  
   <style>
-
   </style>
 
+
+  <script>
+  function init(){
+	  menuInit();
+	  loginInit();
+  }
+  </script>
+  
+   <script src="menuPanel.js"></script>  
+   <script src="loginFilter.js"></script>
+  
 </head>
+
+
 
 <body onload="init()">
 
-  <!-- nav bar -->
-  <div class="navBar">		
-  
+  <!-- main penel -->
+  <div class="mainPanel">		
+
   <header>  
   	<h1> Recommend book web site </h1>
   </header>
 
-  <!-- [navigation area] menu bar -->
+  <!-- menu panel -->
   <nav>  
-    <span class="navigationArea" id="mouseOver"><a href="index.html" >							홈 페이지</a></span>  	
-  	<span class="navigationArea" id="mouseOver"><a href="join.html" target = "_self">			회원가입</a></span>
-    <span class="navigationArea" id="mouseOver"><a href="login.html" target = "_self">			로그인</a></span> 
-    <span class="navigationArea" id="mouseOver"><a href="searchBook.html" target="_self">		추천도서 검색</a></span>  	
-  	<span class="navigationArea" id="mouseOver">												게시글 작성</span> 
+  
+	<span class="menuPanel"><a href="index.html" target="_self">		홈 페이지</a></span>
+	<span class="menuPanel"><a href="join.html" target="_self">			회원가입</a></span>
+	<span class="menuPanel"><a href="login.html" target="_self">		로그인</a></span>
+	<span class="menuPanel"><a href="searchBook.html" target="_self">	추천도서 검색</a></span>
+	<span class="menuPanel">											게시글 작성</span>		
+
   </nav>
 
-
   </div>
-  <!-- nav bar END-->
 
 
 
@@ -88,42 +99,6 @@
   <footer> 
     저작권 : recommend book web site는 <mark>박광호(웹 프로그래머)에게 저작권</mark>이 있습니다
   </footer>
-  
-  <script>
-  
-  var loginBtn;
-  
-  /* web browser에 웹 페이지가 로딩 시 동작하는 함수 */
-  // <body> tag의 attribute인 onclick 프로퍼티에 등록
-  function init(){
-	  loginBtn = document.getElementById("loginBtn");
-	  
-	  loginBtn.addEventListener("click",login);
-  } // init() END
-  
-  function login(){
-	    var id = document.getElementById("id");
-	    var pw = document.getElementById("pw");
-	    
-	    
-	    // id, pw 필터링 logic
-	    // value property : 입력된 값이 저장되어있는 변수
-	    
-	    if((id.value != "") && isNaN(id.value)){		// isNaN : is + Not a Number : 문자열일경우 true
-	    	if(pw.value!="" && !isNaN(pw.value)){
-	    		alert("로그인 성공!!");
-	    	}else{
-	    		alert("PW를 숫자로 입력하세요");
-	    	}
-	    }else{
-	    	alert("ID를 문자로 입력하세요!!");
-	    }
-
-
-  } // login() END
-  
-  </script>
-
 
 
 </body>

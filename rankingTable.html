@@ -6,12 +6,13 @@
   <title> book ranking </title>
   
   <meta charset = "utf-8">
-  <meta name="description" content = "사용자의 취향을 고려한 도서 추천 웹 사이트">
-  <meta name="keywords" content = "book">
+  <meta name="description" 	content = "사용자의 취향을 고려한 도서 추천 웹 사이트">
+  <meta name="keywords" 	content = "book">
   
-  <style>
-    @import url(webSiteStyle.css);
-  </style>
+  <!-- 전체 영역 단위 CSS : 외부파일-->
+  <link href="webSiteStyle.css" type="text/css" rel="stylesheet">
+  
+  
   
   <!-- tag 단위 CSS -->
   <style>
@@ -38,19 +39,28 @@
 
   }
   
+  table a{
+	text-decoration: none; 			 /* hyper text decoration 제거*/  	
+}
+  
   thead{
   	background : rgb(60,170,110);
   }
   
-  tr:hover{
+ 
+  tbody tr:hover{						/* hover의 동작원리에 대한 이해가 필요함!! */				
   	background : rgb(200,150,170);
   }
- 
+
+
+
   </style>
   
   <!-- property 단위 CSS -->
   <style>
   </style>
+  
+  
   
 </head>
 
@@ -66,22 +76,21 @@
      <caption>추천 순위표</caption>
      
      <thead>
-     <th>순위</th><th>도서명</th> <th>작가명</th> <th>추천 별점 (만점:10)</th> 
+     <tr><th>순위</th><th>도서명</th> <th>작가명</th> <th>추천 별점 (만점:10)</th></tr> 
      </thead>
-     
+
      <tbody>
-     <tr><td>1</td><td>용의자 x의 헌신</td><td>히가시노 게이고</td> <td>8</td> </tr>
-     <tr><td>2</td><td>밀실살인게임</td><td>우타노 쇼고</td> <td>7</td> </tr>
-     <tr><td>3</td><td>만년대리 양대리의 본색</td><td>고지영</td> <td>5</td> </tr>
-     <tr><td>4</td><td>화차</td><td>미야베 미유키</td> <td>4</td> </tr>
-     <tr><td>5</td><td>동급생</td><td>히가시노 게이고</td> <td>3</td> </tr>
+     <tr><td>1</td><td><a href="comment book1.html">용의자 x의 헌신	</a></td><td>히가시노 게이고</td> <td>8</td> </tr>
+     <tr><td>2</td><td><a href="comment book2.html">밀실살인게임	</a></td><td>우타노 쇼고</td> <td>7</td> </tr>
+     <tr><td>3</td><td>만년대리 양대리의 본색							</td><td>고지영</td> <td>5</td> </tr>
+     <tr><td>4</td><td>화차										</td><td>미야베 미유키</td> <td>4</td> </tr>
+     
+     <tr id="student"><td>5</td><td>동급생										</td><td>히가시노 게이고</td> <td>3</td> </tr>
+     
      </tbody>
    
    </table>
-   
-   <!-- [update] 테이블 상에 링크로 변경 예정 -->
-   <p align = "center"> <a href="comment book1.html" target = "_blank" >추천 1위 도서 후기 link</a> </p>
-   
+    
    </div>
 
 </body>

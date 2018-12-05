@@ -40,8 +40,7 @@ nav a{
    
 /*/ attribute 단위 /*/
 
-
-.navBar{
+.mainPanel{
         
 	/* 유형(타입)과 위치 */
 	display : block;
@@ -63,9 +62,11 @@ nav a{
 /* navigation area */
 
 /* box model */
-.navigationArea{
-	
+/*
+.navArea{
+*/
 	/* box style */
+/*
 	padding : 5px;
 	margin : 5px;
 	
@@ -73,8 +74,26 @@ nav a{
 	background : MediumTurquoise;
     
 }
+
+*/
+
 /* mouse over */
-#mouseOver:hover{
+/* hover의 동작원리에 대한 이해가 필요함!! */
+/*
+#mouseOver:hover{			
 	background : red;
 }
+
+*/
+
+.menuPanel{
+
+	/* box style */
+	padding : 5px;
+	margin : 5px;
+	
+	border : 1px solid gray;
+	background : MediumTurquoise;
+}  
+
    

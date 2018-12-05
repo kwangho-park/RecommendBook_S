@@ -8,31 +8,48 @@
   <meta name="description" content = "사용자의 취향을 고려한 도서 추천 웹 사이트">
   <meta name="keywords" content = "book">
 
-  <!-- 전체 + tag 단위 css -->  
-  <style>
-    @import url(webSiteStyle.css);  
-  </style>
+  
+  <!-- 전체 영역 단위 CSS : 외부파일-->
+  <link href="webSiteStyle.css" type="text/css" rel="stylesheet">
+
+
+  
+  <script>
+  <!-- web page가 web browser에 load될 때 초기화하는 함수  -->
+  function init(){
+	  menuInit();
+  }
+  </script>
+  
+
+  <script src="menuPanel.js"></script>  
   
 </head>
-  <!-- nav bar -->
-  <div class="navBar">			
-  
+
+
+<body onload="init()">
+
+  <!-- main penel -->
+  <div class="mainPanel">		
+
   <header>  
   	<h1> Recommend book web site </h1>
   </header>
 
-  <!-- [navigation area] menu bar -->
+  <!-- menu panel -->
   <nav>  
-    <span class="navigationArea" id="mouseOver"><a href="index.html" >							홈 페이지</a></span>  	
-  	<span class="navigationArea" id="mouseOver"><a href="join.html" target = "_self">			회원가입</a></span>
-    <span class="navigationArea" id="mouseOver"><a href="login.html" target = "_self">			로그인</a></span> 
-    <span class="navigationArea" id="mouseOver"><a href="searchBook.html" target="_self">		추천도서 검색</a></span>  	
-  	<span class="navigationArea" id="mouseOver">												게시글 작성</span> 
+  
+	<span class="menuPanel"><a href="index.html" target="_self">		홈 페이지</a></span>
+	<span class="menuPanel"><a href="join.html" target="_self">			회원가입</a></span>
+	<span class="menuPanel"><a href="login.html" target="_self">		로그인</a></span>
+	<span class="menuPanel"><a href="searchBook.html" target="_self">	추천도서 검색</a></span>
+	<span class="menuPanel">											게시글 작성</span>		
+
   </nav>
 
-
   </div>
-  <!-- nav bar END-->
+
+
   
 
   <section>

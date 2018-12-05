@@ -9,9 +9,8 @@
   <meta name="description" content = "사용자의 취향을 고려한 도서 추천 웹 사이트">
   <meta name="keywords" content = "book">
   
-  <style>
-    @import url(webSiteStyle.css);
-  </style>
+  <!-- 전체 영역 단위 CSS : 외부파일-->
+  <link href="webSiteStyle.css" type="text/css" rel="stylesheet">
   
   <!-- tag 단위 CSS -->
   <style>
@@ -20,6 +19,41 @@
 		margin-right: auto;
   	}
   </style>
+  
+
+  <script>
+  
+  var bookType;
+  var favorite;
+  var level;
+  
+  var searchBtn;
+  
+  /* web browser에 web page를 로딩 시 초기화하는 함수 */
+  function init(){
+	  bookType  = document.getElementById("bookType");
+	  favorite  = document.getElementById("favorite");
+	  level     = document.getElementById("level");
+	  
+	  searchBtn = document.getElementById("searchBtn");
+	  
+	
+	  searchBtn.addEventListener("click",search);		// 도서검색 button 클릭시 동작하는 event listener (함수)추가
+  }
+  
+  /* 도서검색 버튼 클릭시 동작하는 함수*/
+  function search(){
+	  	  
+	  alert("당신이 선택한 도서분류는 "+bookType.value+" 입니다");
+	  alert("당신이 선택한 취향은 "+favorite.value+" 입니다");
+	  alert("당신이 선택한 난이도는 "+level.value+" 입니다");
+  }
+  
+  
+  
+  </script>
+
+
 </head>
 
 
@@ -68,38 +102,6 @@
      
   
   <input type="button" id="searchBtn"value="도서검색">
-
-  <script>
-  
-  var bookType;
-  var favorite;
-  var level;
-  
-  var searchBtn;
-  
-  /* web browser에 web page를 로딩 시 초기화하는 함수 */
-  function init(){
-	  bookType  = document.getElementById("bookType");
-	  favorite  = document.getElementById("favorite");
-	  level     = document.getElementById("level");
-	  
-	  searchBtn = document.getElementById("searchBtn");
-	  
-	
-	  searchBtn.addEventListener("click",search);		// 도서검색 button 클릭시 동작하는 event listener (함수)추가
-  }
-  
-  /* 도서검색 버튼 클릭시 동작하는 함수*/
-  function search(){
-	  	  
-	  alert("당신이 선택한 도서분류는 "+bookType.value+" 입니다");
-	  alert("당신이 선택한 취향은 "+favorite.value+" 입니다");
-	  alert("당신이 선택한 난이도는 "+level.value+" 입니다");
-  }
-  
-  
-  
-  </script>
 
 </body>
 </html>
