@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>post</title>
+
+	<meta charset="UTF-8">
+	<meta name="description" content = "사용자의 취향을 고려한 도서 추천 웹 사이트">
+	<meta name="keywords" content = "book">
+
+    <!-- 전체 영역 단위 CSS : 외부파일-->
+    <link href="webSiteStyle.css" type="text/css" rel="stylesheet">
+ 
+</head>
+
+<body>
+
+
+  	<!-- main penel -->
+  	<div class="mainPanel">		
+  
+  	<header>  
+  		<h1> Recommend book web site </h1>
+  	</header>
+
+  	<!-- menu panel -->
+  	<nav>  
+  
+	  	<span class="menuPanel"><a href="index.html" target="_self">		홈 페이지</a></span>
+	  	<span class="menuPanel"><a href="join.html" target="_self">			회원가입</a></span>
+		<span class="menuPanel"><a href="login.html" target="_self">		로그인</a></span>
+		<span class="menuPanel"><a href="searchBook.html" target="_self">	추천도서 검색</a></span>
+  		<span class="menuPanel"><a href="post.html" target="_self">			게시글 작성</a></span>		
+
+    </nav>
+
+    </div>
+
+	<h2>글쓰기</h2>
+	
+	<form>
+	
+	<p>제목 : <input type="text"></p>
+	<p>게시글 : <textarea cols="100" rows="10">이곳에 게시글을 작성해주세요 ~ ㅇㅅㅇ  </textarea></p>
+		
+		
+	</form>
+	
+	<h3>추천 점수를 입력해주세요^^</h3>
+
+	
+	
+	<h3>도서 분류를 선택해주세요^^</h3>
+	
+  <p> 
+  <label> 1. 분류 : </label> 
+    <select id="bookType" name = "bookType" size = "1"> 
+      <option value = "fiction"> 소설 </option>
+      <option value = "essay"> 에세이/시 </option>
+      <option value = "humanities"> 인문학 </option>
+      <option value = "economy"> 경제경영 </option>
+      <option value = "develop"> 자기계발 </option>
+      <option value = "license"> 자격증 </option>
+      <option value = "university"> 대학/전공서적 </option>
+      <option value = "hobby"> 취미/레저/여행/뷰티 </option>
+      <option value = "child"> 아동/청소년 </option>
+      <option value = "cartoon"> 만화 </option>            
+      <option value = "other"> 기타 </option>
+    </select>
+  </p>
+  
+  <p>  
+  <label> 2. 취향 : </label> 
+    <select id="favorite" name = "favorite" size = "1"> 
+      <option value = "romance"> 달달한 로맨스 </option>
+      <option value = "wit"> 재미있는 유머 </option>
+      <option value = "story"> 탄탄한 스토리 </option>
+      <option value = "detective"> 추리 </option>
+      <option value = "action"> 액션 </option>
+    </select>      
+  </p>
+  
+  
+  <p>
+  <label> 3. 난이도 : </label> 
+    <select id="level" name = "level" size = "1">
+      <option value = "high"> 상 </option> 
+      <option value = "normal"> 중 </option>
+      <option value = "low"> 하 </option>
+    </select>  
+    
+  </p>
+  
+  
+	
+
+</body>
+</html>
