@@ -9,7 +9,24 @@
 
     <!-- 전체 영역 단위 CSS : 외부파일-->
     <link href="webSiteStyle.css" type="text/css" rel="stylesheet">
- 
+    
+    <!-- tag 단위 css -->  
+	<style>
+	h3{
+		text-align : center;
+	}
+	</style>
+    
+    <!-- attribute 단위 css -->   
+    <style>
+    /* join의 CSS setting을 참고 */
+    .postInfo{
+    	text-align: center;
+    }
+    
+    </style>
+        
+     
 </head>
 
 <body>
@@ -32,64 +49,81 @@
   		<span class="menuPanel"><a href="post.html" target="_self">			게시글 작성</a></span>		
 
     </nav>
-
+    
     </div>
+    
+    
+    
+    
+    <section>  
 
 	<h2>글쓰기</h2>
 	
 	<form>
 	
-	<p>제목 : <input type="text"></p>
-	<p>게시글 : <textarea cols="100" rows="10">이곳에 게시글을 작성해주세요 ~ ㅇㅅㅇ  </textarea></p>
+	<div class="postInfo"><label>제목 : </label><input type="text"></div>
+	
+	<br>
+	
+	<div class="postInfo"><label>게시글 : </label><textarea cols="100" rows="10">이곳에 게시글을 작성해주세요 ~ ㅇㅅㅇ  </textarea></div>
 		
 		
 	</form>
-	
+		
+	<hr>
+			
 	<h3>추천 점수를 입력해주세요^^</h3>
+	
+	<div class="postInfo"><label>추천점수 : </label><input type="number" min="1" max="10"></div>
 
-	
-	
+	<hr>
+
 	<h3>도서 분류를 선택해주세요^^</h3>
 	
-  <p> 
-  <label> 1. 분류 : </label> 
-    <select id="bookType" name = "bookType" size = "1"> 
-      <option value = "fiction"> 소설 </option>
-      <option value = "essay"> 에세이/시 </option>
-      <option value = "humanities"> 인문학 </option>
-      <option value = "economy"> 경제경영 </option>
-      <option value = "develop"> 자기계발 </option>
-      <option value = "license"> 자격증 </option>
-      <option value = "university"> 대학/전공서적 </option>
-      <option value = "hobby"> 취미/레저/여행/뷰티 </option>
-      <option value = "child"> 아동/청소년 </option>
-      <option value = "cartoon"> 만화 </option>            
-      <option value = "other"> 기타 </option>
-    </select>
-  </p>
-  
-  <p>  
-  <label> 2. 취향 : </label> 
-    <select id="favorite" name = "favorite" size = "1"> 
-      <option value = "romance"> 달달한 로맨스 </option>
-      <option value = "wit"> 재미있는 유머 </option>
-      <option value = "story"> 탄탄한 스토리 </option>
-      <option value = "detective"> 추리 </option>
-      <option value = "action"> 액션 </option>
-    </select>      
-  </p>
-  
-  
-  <p>
-  <label> 3. 난이도 : </label> 
-    <select id="level" name = "level" size = "1">
-      <option value = "high"> 상 </option> 
-      <option value = "normal"> 중 </option>
-      <option value = "low"> 하 </option>
-    </select>  
-    
-  </p>
-  
+	<div class="postInfo"> 
+	  <label> 1. 분류 : </label> 
+	    <select id="bookType" name = "bookType" size = "1"> 
+	      <option value = "fiction"> 소설 </option>
+	      <option value = "essay"> 에세이/시 </option>
+	      <option value = "humanities"> 인문학 </option>
+	      <option value = "economy"> 경제경영 </option>
+	      <option value = "develop"> 자기계발 </option>
+	      <option value = "license"> 자격증 </option>
+	      <option value = "university"> 대학/전공서적 </option>
+	      <option value = "hobby"> 취미/레저/여행/뷰티 </option>
+	      <option value = "child"> 아동/청소년 </option>
+	      <option value = "cartoon"> 만화 </option>            
+	      <option value = "other"> 기타 </option>
+	    </select>
+	</div>
+	
+	<br>
+	  
+	<div class="postInfo"> 
+	  <label> 2. 취향 : </label> 
+	    <select id="favorite" name = "favorite" size = "1"> 
+	      <option value = "romance"> 달달한 로맨스 </option>
+	      <option value = "wit"> 재미있는 유머 </option>
+	      <option value = "story"> 탄탄한 스토리 </option>
+	      <option value = "detective"> 추리 </option>
+	      <option value = "action"> 액션 </option>
+	    </select>      
+	</div>
+	  
+	<br>
+	  
+	<div class="postInfo"> 
+	  <label> 3. 난이도 : </label> 
+	    <select id="level" name = "level" size = "1">
+	      <option value = "high"> 상 </option> 
+	      <option value = "normal"> 중 </option>
+	      <option value = "low"> 하 </option>
+	    </select>  
+	    
+	</div>
+	
+  </section>
+ 
   
 	
 
