@@ -34,10 +34,13 @@
 	.joinInfo{
     display : inline-block;
     
+    margin : 5px;
+    
     /* web form의 중앙정렬를 맞추기 위한 설정*/
 	width : 45%;
     text-align: right;
 	}
+	
 	.mail{
 	text-align : center;
 	}  
@@ -46,21 +49,9 @@
   
   
   
-  <script>
-  <!-- web page가 web browser에 load될 때 초기화하는 함수  -->
-  function init(){
-	  menuInit();
-	  filterInit();
-  }
-  </script>
-  
 
-  <script src="menuPanel.js"></script>  
-  <script src="joinFilter.js"></script>
-  
 </head>
 
-<!------------------------------------------------------------------------------------------------------>
 
 
 <body onload="init()">
@@ -101,7 +92,8 @@
         <li>회원정보입력</li>
         <li>개인정보 수집 동의</li>
         <li>개인정보 확인</li>
-        <li>회원가입 심사</li>
+        <li>회원 심사 1차</li>
+        <li>회원 심사 2차</li>
         <li>합격자 통보</li>
         <li>게시글 작성</li>
         <li>추천도서 검색</li>
@@ -114,41 +106,29 @@
 
         <h3> 양식</h3>
 
+        <label class="joinInfo"> 아 이 디&nbsp; : &nbsp;</label>					<input type = "text" 		id = "id" placeholder="아이디를 입력해줘야겠쥬?"> <button>중복확인</button>
+        <label class="joinInfo"> 비밀번호 : &nbsp;</label>							<input type = "password" 	id="password" placeholder="잊어버리면 찾을 수가 없슈!">
+        <label class="joinInfo"> 이&nbsp; &nbsp; 름&nbsp; : &nbsp;</label>		<input type = "text" 		id = "name" placeholder="이름이 뭐쥬?">
+        <label class="joinInfo"> 생년월일 : &nbsp;</label>							<input type = "date"  		id="brathday" placeholder="챙겨주지 않을꺼 알쥬?">
+        <label class="joinInfo"> 이 메 일&nbsp; : &nbsp;</label>					<input type = "email" 		id="email" placeholder="이메일은 @을 넣어야겠쥬?">
+        <label class="joinInfo"> 주&nbsp; &nbsp; &nbsp;소&nbsp; : &nbsp;</label>	<input type = "text" 		id="address" placeholder="솔로인 여성분은 연락처 기입">
 
-		
-
-
-        <p><label class="joinInfo"> 아 이 디&nbsp; : &nbsp;</label>					<input type = "text" id = "id" placeholder="아이디를 입력해줘야겠쥬?"> <button>중복확인</button></p>
-
-        <p><label class="joinInfo"> 비밀번호 : &nbsp;</label>							<input type = "password" id="password" placeholder="잊어버리면 찾을 수가 없슈!"></p> 
-
-        <p><label class="joinInfo"> 이&nbsp; &nbsp; 름&nbsp; : &nbsp;</label>			<input type = "text" id = "name" placeholder="이름이 뭐쥬?"></p>
-
-        <p><label class="joinInfo"> 생년월일 : &nbsp;</label>							<input type = "date"  id="brathday" placeholder="챙겨주지 않을꺼 알쥬?"></p> 
-
-        <p><label class="joinInfo"> 이 메 일&nbsp; : &nbsp;</label>					<input type = "email" id="email" placeholder="이메일은 @을 넣어야겠쥬?"></p> 
-
-        <p><label class="joinInfo"> 주&nbsp; &nbsp; &nbsp;소&nbsp; : &nbsp;</label>	<input type = "text" id="address" placeholder="솔로인 여성분은 연락처 기입"></p> 
-
-
-        <p><label class="joinInfo"> 가입경로&nbsp; : &nbsp;</label> 
+        <label class="joinInfo"> 가입경로&nbsp; : &nbsp;</label> 
         <select name = "joinProcess" size = "1"> 
           <option value = "searchInternet"> 인터넷 검색 </option>
           <option value = "recommended"> 지인추천 </option>
           <option value = "advertising"> 광고 </option>
           <option value = "other"> 기타 </option>
-        </select></p>    
+        </select>
 
 
 		<div class="mail">
 		
         <fieldset>
           <legend> 광고성 메일 수신여부 </legend>
-      
-      	  <p>
+     
           <label> 수신 : </label>		<input type = "radio" name = "advertising" checked> 
           <label> 미수신 : </label>	<input type = "radio" name = "advertising">
-          </p>
         </fieldset>
 
         <br>
@@ -159,9 +139,7 @@
         
 
       </form>
-      
     </article>
-
   </section>
 
   <hr>
@@ -177,6 +155,21 @@
   <footer> 
     저작권 : recommend book web site는 <mark>박광호(웹 프로그래머)에게 저작권</mark>이 있습니다
   </footer>
+
+  <!-- ----------------------------------------------------------------------------------------- -->
+
+  <script>
+  <!-- web page가 web browser에 load될 때 초기화하는 함수  -->
+  function init(){
+	  menuInit();
+	  filterInit();
+  }
+  </script>
+  
+
+  <script src="menuPanel.js"></script>  
+  <script src="joinFilter.js"></script>
+  
 
 <body>
 

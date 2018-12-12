@@ -27,16 +27,7 @@
   </style>
 
 
-  <script>
-  function init(){
-	  menuInit();
-	  loginInit();
-  }
-  </script>
-  
-   <script src="menuPanel.js"></script>  
-   <script src="loginFilter.js"></script>
-  
+
 </head>
 
 
@@ -75,10 +66,10 @@
 	<article>
 		<form>
 		
-    	<p align="center"><label> id (문자) </label>	<input type = "text" id = "id"></p>
-    	<p align="center"><label> pw (숫자) </label>	<input type = "password" id = "pw"></p>
+    	<div align="center"><label> id (문자) </label>	<input type = "text" id = "id"></div>
+    	<div align="center"><label> pw (숫자) </label>	<input type = "password" id = "pw"></div>
     	
-    	<p align="center"><input type="button" id="loginBtn" value="로그인"></p>
+    	<div align="center"><input type="button" id="loginBtn" value="로그인"></div>
     	
     	
 		</form>
@@ -101,6 +92,19 @@
     저작권 : recommend book web site는 <mark>박광호(웹 프로그래머)에게 저작권</mark>이 있습니다
   </footer>
 
+
+  <!-- ----------------------------------------------------------------------------------------- -->
+
+  <script>
+  function init(){
+	  menuInit();
+	  loginInit();
+  }
+  </script>
+  
+   <script src="menuPanel.js"></script>  
+   <script src="loginFilter.js"></script>
+  
 
 </body>
 
