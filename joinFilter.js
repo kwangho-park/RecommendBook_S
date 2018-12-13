@@ -20,17 +20,19 @@
   function filterInit(){
 	  joinBtn = document.getElementById("joinBtn");
 	  
-	  joinBtn.onclick = filter;  
+	  joinBtn.onclick = join;  
   }	
   
-  function filter(){
+  /* join button click 시 실행되는 함수*/
+  function join(){
 		
-		var id = document.getElementById("id");
-		var pw = document.getElementById("password");
-		var name = document.getElementById("name");
-		var brathday = document.getElementById("brathday");		// 사용자 입력 시 <input> attribute(date)에서 필터링
-		var email = document.getElementById("email");			// 필터링 적용 필요
-		var address = document.getElementById("address");		
+	    /* <input> 의 dom객체의 참조값을 반환 */
+		var idDom = document.getElementById("id");
+		var pwDom = document.getElementById("pw");
+		var nameDom = document.getElementById("name");
+		var brathdayDom = document.getElementById("brathday");		// 사용자 입력 시 <input> attribute(date)에서 필터링
+		var emailDom = document.getElementById("email");			// 필터링 적용 필요
+		var addressDom = document.getElementById("address");		
 
 		
 		/* [??] 이메일의 유효성을 검사하는 정규식 */
@@ -40,25 +42,43 @@
 
 		
 
-		// 회원정보 filtering 알고리즘
-		// isNaN 라이브러리 메소드 : not a number : 숫자가 아닐경우 true반환
-		if((id.value !="")&&(isNaN(id.value)) ){					// id : 공백과 숫자일경우 실행x
-			if((pw.value != "")&&(!isNaN(pw.value)) ){				// pw : 공백과 문자일경우 실행x
-				if((name.value !="")&&(isNaN(name.value)) ){		// name : 공백과 숫자일경우 실행x
-					if(brathday.value != ""){						// brathday : 공백일경우 실행x
-						alert("회원가입이 완료 되었습니다 !!");
+		// 객체 생성 및 참조값 할당
+		// 사용자에게 입력받은 data를 filter method에게 전달
+		var login = createFilter(idDom.value, pwDom.value, nameDom.value, brathdayDom.value);
+	
+		login.filter();
+		
+  } // join() END
+  
+  
+  /* 회원가입 정보 필터링 function */
+  // id, pw, name, brathday
+  function createFilter(id, pw, name, brathday){
+	  
+	  return {
+		  filter : function(){		// filter property의 method
+			  
+				// 회원정보 filtering 알고리즘
+				// isNaN 라이브러리 메소드 : not a number : 숫자가 아닐경우 true반환
+				if((id !="")&&(isNaN(id)) ){					// id : 공백과 숫자일경우 실행x
+
+					if((pw != "")&&(!isNaN(pw)) ){				// pw : 공백과 문자일경우 실행x
+						if((name !="")&&(isNaN(name)) ){		// name : 공백과 숫자일경우 실행x
+							if(brathday != ""){						// brathday : 공백일경우 실행x
+								alert("회원가입이 완료 되었습니다 !!");
+							}else{
+								alert("생년월일을 입력해주실래요??^^");	
+							}
+						}else{
+							alert("이름을 문자로 입력해주실래요??^^");	
+						}
 					}else{
-						alert("생년월일을 입력해주실래요??^^");	
+						alert("pw을 숫자로 입력해주실래요??^^");
 					}
 				}else{
-					alert("이름을 문자로 입력해주실래요??^^");	
+					alert("id를 문자로 입력해주실래요?^^");	
 				}
-			}else{
-				alert("pw을 숫자로 입력해주실래요??^^");				
-			}
-		}else{
-			alert("id를 문자로 입력해주실래요?^^");	
-		}
-  
-  } // filter() END
+		  }
+	  }
+  } // createFilter() END
   

@@ -24,8 +24,17 @@
   
   <!-- 속성 단위 css -->  
   <style>
-  </style>
+  .loginInfo{
+     display :inline-block;	
+     margin : 5px;
+          
+     /* web form의 중앙정렬를 맞추기 위한 설정*/
+	 width : 44%;
+     text-align: right;
 
+  }
+  </style>
+  
 
 
 </head>
@@ -66,12 +75,11 @@
 	<article>
 		<form>
 		
-    	<div align="center"><label> id (문자) </label>	<input type = "text" id = "id"></div>
-    	<div align="center"><label> pw (숫자) </label>	<input type = "password" id = "pw"></div>
-    	
+    	<label class="loginInfo"> ID </label><input type = "text" id = "id" placeholder="문자입력">
+    	<label class="loginInfo"> PW </label><input type = "password" id = "pw" placeholder="숫자입력">
+
     	<div align="center"><input type="button" id="loginBtn" value="로그인"></div>
-    	
-    	
+  
 		</form>
 	</article>
 
