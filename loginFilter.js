@@ -6,9 +6,9 @@
   
   /* web browser에 웹 페이지가 로딩 시 동작하는 함수 */
   function loginInit(){
-	  loginBtn = document.getElementById("loginBtn");
+	  loginBtn = document.getElementById("loginBtn");		// <input> login button의 dom객체 참조값을 반환
 	  
-	  loginBtn.addEventListener("click",login);
+	  loginBtn.addEventListener("click",login);				// login function을 button의 이벤트 리스너등록
   } // init() END
   
   

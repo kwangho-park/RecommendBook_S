@@ -10,6 +10,7 @@
     <!-- 전체 영역 단위 CSS : 외부파일-->
     <link href="webSiteStyle.css" type="text/css" rel="stylesheet">
     
+    
     <!-- tag 단위 css -->  
 	<style>
 	h3{
@@ -17,11 +18,16 @@
 	}
 	</style>
     
+    
+    
     <!-- attribute 단위 css -->   
     <style>
-    /* join의 CSS setting을 참고 */
+    
+    /* join의 CSS setting을 참고하여 수정 예정 */
     .postInfo{
+
     	text-align: center;
+  
     }
     
     </style>
@@ -31,7 +37,7 @@
 
 
 
-<body>
+<body onload="init()">
 
 
   	<!-- main penel -->
@@ -62,25 +68,23 @@
 	<h2>글쓰기</h2>
 	
 	<form>
+	<div class="postInfo"><labal>도서명 : </labal><input type="text" id="bookName"></div>
+	<br>
+	<div class="postInfo"><labal>작가명 : </labal><input type="text" id="writer"></div>
+	<br>
 	
-	<div class="postInfo"><label>제목 : </label><input type="text"></div>
+	<div class="postInfo"><input type="text" id="title" placeholder="제목을 작성해주세요" style="width:720px"></div>
 	
 	<br>
 	
-	<div class="postInfo"><label>게시글 : </label><textarea cols="100" rows="10">이곳에 게시글을 작성해주세요 ~ ㅇㅅㅇ  </textarea></div>
+	<div class="postInfo"><textarea id="content" cols="100" rows="10" placeholder="이곳에 게시글을 작성해주세요 ~ ㅇㅅㅇ "></textarea></div>
 		
 		
 	</form>
 		
 	<hr>
-			
-	<h3>추천 점수를 입력해주세요^^</h3>
-	
-	<div class="postInfo"><label>추천점수 : </label><input type="number" min="1" max="10"></div>
 
-	<hr>
-
-	<h3>도서 분류를 선택해주세요^^</h3>
+	<h3>도서 분류를 선택해주세요^-^</h3>
 	
 	<div class="postInfo"> 
 	  <label> 1. 분류 : </label> 
@@ -124,10 +128,79 @@
 	    
 	</div>
 	
+	<hr>
+	
+	<h3>추천 점수를 입력해주세요^-^</h3>
+	
+	<div class="postInfo"><input type="number" id="score" min="1" max="10"></div>
+
+	<br>
+	<div align="center"><input type="button" id="postBtn"value="게시글 등록"></div>
+	<br>
+	
   </section>
  
   
-	
+  <!-- ----------------------------------------------------------------------------------------- -->
+
+  <script>
+  /* 웹 페이지가 web browser에 loading시 동작하는 function */
+  // <body>에 onload 이벤트리스너 등록)
+  function init(){
+	  menuInit();
+	  postInit();
+  }
+  </script>	
+  
+  
+  <!-- menuPanel CSS의 동적인 동작을 위한 js -->
+  <script src="menuPanel.js"></script> 
+  
+  
+  <script>
+  
+  var postBtn;
+  
+  /* web browser에 웹 페이지가 로딩 시 동작하는 함수 */
+  function postInit(){
+	  postBtn = document.getElementById("postBtn");		// <input> post button의 dom객체의 참조값을 반환
+	  
+	  postBtn.addEventListener("click",post);				// function을 button의 이벤트 리스너등록 
+  } // init() END
+  
+  
+  /* 게시글 등록 버튼 postBtn 클릭시 동작하는 function */
+  function post(){
+	    
+	    var bookNameDom = document.getElementById("bookName");
+	    var writerDom = document.getElementById("writer");
+	    var scoreDom = document.getElementById("score");
+	    var titleDom = document.getElementById("title");
+	    
+	    
+		/* session storage에 변수 저장 */
+		window.sessionStorage.setItem(1,bookNameDom.value);
+		window.sessionStorage.setItem(2,writerDom.value);
+		window.sessionStorage.setItem(3,scoreDom.value);
+		window.sessionStorage.setItem(4,titleDom.value);
+		
+
+	    console.log(window.sessionStorage.getItem(1));
+	    console.log(window.sessionStorage.getItem(2));  
+	    console.log(window.sessionStorage.getItem(3));  
+	    console.log(window.sessionStorage.getItem(4));  
+	    
+	    
+	    // 입력받은 값을 출력하는 방법은???????
+	    		
+
+	    
+  }
+  
+  </script>
+  
+  
 
 </body>
+
 </html>
