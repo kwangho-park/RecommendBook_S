@@ -12,6 +12,37 @@
   <!-- 전체 영역 단위 CSS : 외부파일-->
   <link href="webSiteStyle.css" type="text/css" rel="stylesheet">
 
+  <!-- tag 단위 CSS -->
+  <style>
+  
+  
+  table{ /* defult display : block */	
+  	margin-left : auto;
+  	margin-right : auto;
+  	text-align : center;
+  	border : 2px solid gray;
+  	background : rgb(130,255,170);
+  	border-collapse: collapse;		/* 이중 테두리 제거*/
+  	
+  }
+  
+  th{
+  	width : 150px;
+  }
+  
+  
+  thead{ /* defule display : inline */
+     background : rgb(60,170,110);
+  }
+  
+  tbody{ /* defule display : inline */
+
+  }
+
+
+  </style>  
+  
+  <!-- attribute 단위 CSS -->
 
   
 
@@ -53,7 +84,27 @@
 	</article>
 
 	<article>
-	도서명, 작가명, 추천별점, 제목
+
+	<br>
+
+	<table>
+		<thead>
+			<tr><th>순위</th><th>도 서 명</th><th>작 가 명</th><th>추천 별점</th><th>제 목</th></tr>
+		</thead>
+		
+		<tbody>
+			<tr><td>6</td><td id="bookName6"></td><td id="writer6"></td><td id="score6"></td><td id="title6"></td></tr>
+			<tr><td>7</td><td id="bookName7"></td><td id="writer7"></td><td id="score7"></td><td id="title7"></td></tr>
+			<tr><td>8</td><td id="bookName8"></td><td id="writer8"></td><td id="score8"></td><td id="title8"></td></tr>
+			<tr><td>9</td><td id="bookName9"></td><td id="writer9"></td><td id="score9"></td><td id="title9"></td></tr>
+			<tr><td>10</td><td id="bookName10"></td><td  id="writer10"></td><td id="score10"></td ><td id="title10"></td></tr>
+		</tbody>
+		
+	</table>
+	
+	
+	<br>
+	
 	</article>
 
 
@@ -82,11 +133,41 @@
   <!-- web page가 web browser에 load될 때 초기화하는 함수  -->
   function init(){
 	  menuInit();
+	  printCheck();
   }
   </script>
   
 
   <script src="menuPanel.js"></script>  
+  
+  <script>
+  // 외부파일로 작성 "searchBookPosting"
+  /* 게시글 출력여부를 판단하는 function */
+  function printCheck(){
+	  
+	  if(0 < window.sessionStorage.length){		// sessionStorage의 값이 존재하는지 확인	 
+		printPost();		  
+	  }
+  } // printCheck()
+  
+  
+  /* 게시글을 출력하는 function */
+  function printPost(){
+	  
+	  var bookNameDom = document.getElementById("bookName6");
+	  var writerDom = document.getElementById("writer6");
+	  var scoreDom = document.getElementById("score6");
+	  var titleDom = document.getElementById("title6");
+	
+	  
+	  // session storage의 데이터를 호출하여 각각의 tag내에 출력 (=덮어쓰기)
+	  bookNameDom.innerHTML = window.sessionStorage.getItem(1);		
+	  writerDom.innerHTML 	= window.sessionStorage.getItem(2);
+	  scoreDom.innerHTML	= window.sessionStorage.getItem(3);
+	  titleDom.innerHTML	= window.sessionStorage.getItem(4);
+	  
+  }
+  </script>
   
 
 </body>
