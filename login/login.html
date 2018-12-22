@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title> Recommend book </title>
+  
+
+  <meta charset = "utf-8">
+  <meta name="description" content = "사용자의 취향을 고려한 도서 추천 웹 사이트">
+  <meta name="keywords" content = "book">
+
+
+
+  
+  <!-- 전체 영역 단위 CSS : 외부파일-->
+  <link href="../webSiteStyle.css" type="text/css" rel="stylesheet">
+  
+  
+  <!-- tag 단위 css -->  
+  <style>
+  </style>
+  
+  
+  <!-- 속성 단위 css -->  
+  <style>
+  .loginInfo{
+     display :inline-block;	
+     margin : 5px;
+          
+     /* web form의 중앙정렬를 맞추기 위한 설정*/
+	 width : 44%;
+     text-align: right;
+
+  }
+  </style>
+  
+
+
+</head>
+
+
+
+<body onload="init()">
+
+  <!-- main penel -->
+  <div class="mainPanel">		
+
+  <header>  
+  	<h1> Recommend book web site </h1>
+  </header>
+
+  <!-- menu panel -->
+  <nav>  
+  
+	<span class="menuPanel"><a href="../index/index.html" target="_self">			홈 페이지</a></span>
+	<span class="menuPanel"><a href="../join/join.html" target="_self">				회원가입</a></span>
+	<span class="menuPanel"><a href="../login/login.html" target="_self">			로그인</a></span>
+	<span class="menuPanel"><a href="../searchBook/searchBook.html" target="_self">	추천도서 검색</a></span>
+ 	<span class="menuPanel"><a href="../post/post.html" target="_self">				게시글 작성</a></span>		
+  </nav>
+
+  </div>
+
+
+
+  <section>
+    
+    <article>
+    <h2>로그인 페이지에 오신것을 환영합니다 ^-^ </h2>
+    </article>
+
+
+	<article>
+		<form>
+		
+    	<label class="loginInfo"> ID </label><input type = "text" id = "id" placeholder="문자입력">
+    	<label class="loginInfo"> PW </label><input type = "password" id = "pw" placeholder="숫자입력">
+
+    	<div align="center"><input type="button" id="loginBtn" value="로그인"></div>
+  
+		</form>
+	</article>
+
+  </section>
+
+  <hr>
+  
+  
+  <!-- reference contents -->
+  <aside> 
+    참고 : 박광호의 기술 블로그<a href = "http://solt.tistory.com" target = "_blank" title = "극논리주의 짠백이">
+    (solt.tistory.com) </a>
+  </aside>		
+
+
+  <!-- 저작권 정보, 연락처 등-->
+  <footer> 
+    저작권 : recommend book web site는 <mark>박광호(웹 프로그래머)에게 저작권</mark>이 있습니다
+  </footer>
+
+
+  <!-- ----------------------------------------------------------------------------------------- -->
+
+  <script>
+  function init(){
+	  menuInit();
+	  loginInit();
+  }
+  </script>
+  
+   <script src="../menuPanel.js"></script>  
+   <script src="loginFilter.js"></script>
+  
+
+</body>
+
+</html>
