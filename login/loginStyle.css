@@ -1,0 +1,17 @@
+
+
+
+/* tag 단위 css */
+
+  
+  
+/* 속성 단위 css */  
+.loginInfo{
+   display :inline-block;	
+   margin : 5px;
+          
+   /* web form의 중앙정렬를 맞추기 위한 설정*/
+   width : 44%;
+   text-align: right;
+}
+  

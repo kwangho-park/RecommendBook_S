@@ -9,52 +9,20 @@
   <meta name="description" content = "사용자의 취향을 고려한 도서 추천 웹 사이트">
   <meta name="keywords" content = "book">
 
-  <!-- 전체 영역 단위 CSS : 외부파일-->
+  <!-- 전체 영역 단위 CSS-->
   <link href="../webSiteStyle.css" type="text/css" rel="stylesheet">
 
-  <!-- 전체 + tag 단위 css -->
-  <style>
-    h3{
-    text-align : center;
-    }
-	
-    ol{
-    display: table;
-    margin-left: auto;
-    margin-right: auto;
- 	}
 
+  <!-- 해당 page단위 CSS -->
+  <link href="joinStyle.css" type="text/css" rel="stylesheet">
 
-  </style>
-
-
-  <!-- property(속성) 단위 css -->
-  <style>
-  
-	.joinInfo{
-    display : inline-block;
-    
-    margin : 5px;
-    
-    /* web form의 중앙정렬를 맞추기 위한 설정*/
-	width : 45%;
-    text-align: right;
-	}
-	
-	.mail{
-	text-align : center;
-	}  
-	
-  </style>
-  
-  
-  
+   
 
 </head>
 
 
 
-<body onload="init()">
+<body onload="initJoin()">
 
   <!-- main penel -->
   <div class="mainPanel">		
@@ -158,13 +126,9 @@
 
   <!-- ----------------------------------------------------------------------------------------- -->
 
-  <script>
-  <!-- web page가 web browser에 load될 때 초기화하는 함수  -->
-  function init(){
-	  menuInit();
-	  filterInit();
-  }
-  </script>
+  <!-- web page가 web browser에 load될 때 초기화하는 로직 -->
+
+  <script src="initJoin.js"></script>
   
 
   <script src="../menuPanel.js"></script>  

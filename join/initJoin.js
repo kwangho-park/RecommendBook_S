@@ -1,0 +1,6 @@
+
+
+function initJoin(){
+	  menuInit();
+	  joinEventListener();
+}

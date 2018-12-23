@@ -17,7 +17,7 @@
   var joinBtn;
   
   /* join page가 웹 브라우저에 로딩될때 실행되는 메소드 (=초기화) */	
-  function filterInit(){
+  function joinEventListener(){
 	  joinBtn = document.getElementById("joinBtn");
 	  
 	  joinBtn.onclick = join;  
