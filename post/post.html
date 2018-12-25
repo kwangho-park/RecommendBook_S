@@ -68,8 +68,8 @@
 	
 	<div class="postInfo"> 
 	  <label> 1. 분류 : </label> 
-	    <select id="bookType" name = "bookType" size = "1"> 
-	      <option value = "fiction"> 소설 </option>
+	    <select id="bookType" name = "bookType" size = "1" > 
+	      <option value = "fiction" selected> 소설 </option>		
 	      <option value = "essay"> 에세이/시 </option>
 	      <option value = "humanities"> 인문학 </option>
 	      <option value = "economy"> 경제경영 </option>
@@ -88,7 +88,7 @@
 	<div class="postInfo"> 
 	  <label> 2. 취향 : </label> 
 	    <select id="favorite" name = "favorite" size = "1"> 
-	      <option value = "romance"> 달달한 로맨스 </option>
+	      <option value = "romance" selected> 달달한 로맨스 </option>
 	      <option value = "wit"> 재미있는 유머 </option>
 	      <option value = "story"> 탄탄한 스토리 </option>
 	      <option value = "detective"> 추리 </option>
@@ -101,7 +101,7 @@
 	<div class="postInfo"> 
 	  <label> 3. 난이도 : </label> 
 	    <select id="level" name = "level" size = "1">
-	      <option value = "high"> 상 </option> 
+	      <option value = "high" selected> 상 </option> 
 	      <option value = "normal"> 중 </option>
 	      <option value = "low"> 하 </option>
 	    </select>  
@@ -131,6 +131,8 @@
   <script src="writePosting.js"></script>
   
 
+  <!-- 게시글 출력하는 로직 (연습용) -->
+  <script src="printPosting.js"></script>
   
 
 </body>
