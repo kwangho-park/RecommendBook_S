@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>post</title>
+
+	<meta charset="UTF-8">
+	<meta name="description" content = "사용자의 취향을 고려한 도서 추천 웹 사이트">
+	<meta name="keywords" content = "book">
+
+    <!-- 전체 영역 단위 CSS -->
+    <link href="../webSiteStyle.css" type="text/css" rel="stylesheet">
+    
+    <!-- 해당 page단위 CSS -->
+    <link href="postStyle.css" type="text/css" rel="stylesheet">
+
+</head>
+
+
+
+<body onload="initPost()">
+
+
+  	<!-- main penel -->
+  	<div class="mainPanel">		
+  
+  	<header>  
+  		<h1> Recommend book web site </h1>
+  	</header>
+
+  	<!-- menu panel -->
+  	<nav>  
+  
+	<span class="menuPanel"><a href="../index/index.html" target="_self">			홈 페이지</a></span>
+	<span class="menuPanel"><a href="../join/join.html" target="_self">				회원가입</a></span>
+	<span class="menuPanel"><a href="../login/login.html" target="_self">			로그인</a></span>
+	<span class="menuPanel"><a href="../searchBook/searchBook.html" target="_self">	추천도서 검색</a></span>
+ 	<span class="menuPanel"><a href="../post/post.html" target="_self">				게시글 작성</a></span>	
+ 		
+    </nav>
+    
+    </div>
+    
+    
+    
+    
+    <section>  
+
+	<h2>글쓰기</h2>
+	
+	<form>
+	<div class="postInfo"><label>도서명 : </label><input type="text" id="bookName"></div>
+	<br>
+	<div class="postInfo"><label>작가명 : </label><input type="text" id="writer"></div>
+	<br>
+	
+	<div class="postInfo"><input type="text" id="title" placeholder="제목을 작성해주세요" style="width:720px"></div>
+	
+	<br>
+	
+	<div class="postInfo"><textarea id="content" cols="100" rows="10" placeholder="이곳에 게시글을 작성해주세요 ~ ㅇㅅㅇ "></textarea></div>
+		
+		
+	</form>
+		
+	<hr>
+
+	<h3>도서 분류를 선택해주세요^-^</h3>
+	
+	<div class="postInfo"> 
+	  <label> 1. 분류 : </label> 
+	    <select id="bookType" name = "bookType" size = "1" > 
+	      <option value = "fiction" selected> 소설 </option>		
+	      <option value = "essay"> 에세이/시 </option>
+	      <option value = "humanities"> 인문학 </option>
+	      <option value = "economy"> 경제경영 </option>
+	      <option value = "develop"> 자기계발 </option>
+	      <option value = "license"> 자격증 </option>
+	      <option value = "university"> 대학/전공서적 </option>
+	      <option value = "hobby"> 취미/레저/여행/뷰티 </option>
+	      <option value = "child"> 아동/청소년 </option>
+	      <option value = "cartoon"> 만화 </option>            
+	      <option value = "other"> 기타 </option>
+	    </select>
+	</div>
+	
+	<br>
+	  
+	<div class="postInfo"> 
+	  <label> 2. 취향 : </label> 
+	    <select id="favorite" name = "favorite" size = "1"> 
+	      <option value = "romance" selected> 달달한 로맨스 </option>
+	      <option value = "wit"> 재미있는 유머 </option>
+	      <option value = "story"> 탄탄한 스토리 </option>
+	      <option value = "detective"> 추리 </option>
+	      <option value = "action"> 액션 </option>
+	    </select>      
+	</div>
+	  
+	<br>
+	  
+	<div class="postInfo"> 
+	  <label> 3. 난이도 : </label> 
+	    <select id="level" name = "level" size = "1">
+	      <option value = "high" selected> 상 </option> 
+	      <option value = "normal"> 중 </option>
+	      <option value = "low"> 하 </option>
+	    </select>  
+	    
+	</div>
+	
+	<hr>
+	
+	<h3>추천 점수를 입력해주세요^-^</h3>
+	
+	<div class="postInfo"><input type="number" id="score" min="1" max="10"></div>
+
+	<br>
+	<div align="center"><input type="button" id="postBtn"value="게시글 등록"></div>
+	<br>
+	
+  </section>
+ 
+ 
+  <!-- web page loading 시 초기화 로직 -->
+  <script src="initPost.js"></script>
+
+  <!-- menuPanel CSS의 동적인 동작을 위한 로직 -->
+  <script src="../menuPanel.js"></script> 
+ 
+  <!-- 게시글 업데이트 로직 -->
+  <script src="writePosting.js"></script>
+  
+
+  <!-- 게시글 출력하는 로직 (연습용) -->
+  <script src="printPosting.js"></script>
+  
+
+</body>
+
+</html>
