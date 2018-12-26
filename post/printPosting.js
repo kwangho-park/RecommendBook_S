@@ -1,8 +1,13 @@
 
-/* 사용자에게 게시글 데이터를 입력받아 표출하는 로직 */
-// 객체/상속 연습용 (prototype의 공유로 상속구현)
-// 추후 서버 연동시 활용
-// 도서의 분류에 따라서 취향을 다르게 입력 or 사용자의 선택 사항 (=ExtendDTO의 prototype 객체 활용)
+/* 사용자에게 게시글 데이터를 입력받아 표출하는 로직
+ * 
+ * 객체/상속 연습용 (prototype의 공유로 상속구현)
+ * 추후 서버 연동시 활용
+ * 도서의 분류에 따라서 취향을 다르게 입력 or 사용자의 선택 사항 (=ExtendDTO의 prototype 객체 활용)
+ * 
+ * */
+
+
 
 
 /* 분류, 취향, 난이도를 저장하기위한 객체 생성자 함수 */
@@ -10,12 +15,7 @@
 
 function ExtendDTO(){}
 
-// post page의 select tag 객체에서 데이터	를 읽어야함
-/* test
-ExtendDTO.prototype.bookType = "분류";
-ExtendDTO.prototype.favorite = "취향";
-ExtendDTO.prototype.level = "난이도";
-*/
+
 
 /* 입력된 게시글 데이터를 출력하는 함수*/
 function printPosting(){
@@ -57,6 +57,7 @@ function printPosting(){
 
 	
 	// 다이얼로그 출력 후 확인 or 취소 입력값을 반환 (확인 = true, 취소 = false)
+	// 현재는 반환값을 미활용..2018.12
 	var result = confirm(
 			"도서명 : " + dto.bookName + "\n" + 
 			"작가 : " + dto.writer + "\n" +
@@ -69,8 +70,9 @@ function printPosting(){
 		);
 	
 	/* [update] */
-	// 선택하지 않았을때는 <select> dom 객체의 value 값이 undefined 출력..!
+	// [현상1] 선택하지 않았을때는 <select> dom 객체의 value 값이 undefined 출력..!
 	// <select> tag의 <option> attribute selected는 효력이 없음..
+	// [현상2] web page가 로드된 직후에 '게시글등록' 버튼의 이벤트에 undefined 가 저장되고 이후에는 정상동작..?!
 	
 } // printPosting() END
 
