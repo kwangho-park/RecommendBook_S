@@ -2,9 +2,13 @@
 
 /* 게시글을 입력받아'추천도서 검색' session storage에 저장하는 로직 */
 // 간이 게시판
+
+
+// '게시글 등록' button
+// [update]전역변수는 오류를 발생시킬 가능성이있기에 함수안으로 넣어야할듯
 var postBtn;
 
-
+ 
 /* web browser에 웹 페이지가 로딩 시 동작하는 function */
 function postEventListener(){
 	postBtn = document.getElementById("postBtn");		// <input> post button의 dom객체의 참조값을 반환
@@ -14,21 +18,33 @@ function postEventListener(){
  
 
 
-//게시글 등록 버튼 postBtn 클릭시 동작
+// 게시글 등록 버튼 postBtn 클릭시 동작
 function postBtnEL(){
 	
 	/* session storage의 잔여공간을 확인 */
-	// 저장한도 5개
-	if(5>window.sessionStorage.length){
+	// 0번 : 게시글 정보의 key 값
+	// 1-5번 : 게시글 정보 (최대 5개)	
+
+	if(6>sessionStorage.getItem(0)){			// ***[update 필요함 = 현재 게시글이 6개까지 등록됨]
 		
-		// **입력 받은 게시글을 출력하는 함수를 호출 할 예정 //
+		// 입력 받은 게시글을 출력 (test용)//
 		printPosting();
 		
+		// session storage에 저장
 		post();
+		
 	}else{
 		alert("게시글수의 한도에 도달했습니다. 관리자에게 문의하세요!^-^");
 	}
+/*
+	// 입력 받은 게시글을 출력 (test용)//
+	printPosting();
+	
+	// session storage에 저장
+	post();
+*/	
 
+	
 } // postBtnEL() END
 
   
@@ -43,29 +59,45 @@ function post(){
     
 	
 	// 사용자가 입력한 게시글의data를 읽음
-	var bookName 	= bookNameDom.value;
-	var writer 		= writerDom.value;
-	var score		= scoreDom.value;
-	var title		= titleDom.value;
-	
-	
 	// 1.메모리에 객체 할당 2.객체초기화 3.prototype에 링크연결 4.객체 주소반환
-	var dto = new PostingDTO(bookName, writer, score, title);
+	var dto = new PostingDTO(bookName.value, writer.value, score.value, title.value);
 
 	
-	/* session storage에 순서부여를 위해 메모리 사이즈 확인 */
-	var key = window.sessionStorage.length;		// key : 0~4
+	var add;		// key 값을 증가시키기 위한 변수
 	
-	// session storage에 저장
+	
+	
+	/* 게시글 정보의 key 값 설정*/
+	if(sessionStorage.getItem(0) == null){		// 웹 페이지가 최초 로드 시 key값(0번)을 1로 초기화
+		sessionStorage.setItem(0, 1);
+		console.log("조건1");
+	}else{					
+		add = 1 + parseInt(sessionStorage.getItem(0));			// 문자열 -> 숫자 명시적으로 변환함
+		// [장기고민] sessionStorage.getItem(0)반환값의 타입이 문자열인 이유는??		
+		
+		sessionStorage.setItem(0, add)
+		console.log("조건2");
+	}
 
-	window.sessionStorage.setObj(key,dto);
+	key = sessionStorage.getItem(0);
+	
+	
+	
+	// session storage에 게시글 정보를 저장 (1번~5번)
+	sessionStorage.setObj(key,dto);
 
 
-	console.log(window.sessionStorage.getObj(0));
-	console.log(window.sessionStorage.getObj(1)); 
-	console.log(window.sessionStorage.getObj(2));
-	console.log(window.sessionStorage.getObj(3));
-	console.log(window.sessionStorage.getObj(4));
+	
+
+	// test
+	console.log("----------------------")
+	console.log(sessionStorage.getItem(0));		// 게시글 정보의 key
+	console.log(sessionStorage.getObj(1)); 
+	console.log(sessionStorage.getObj(2));
+	console.log(sessionStorage.getObj(3));
+	console.log(sessionStorage.getObj(4));
+	console.log(sessionStorage.getObj(5));
+	console.log("----------------------")
 
 	
 	alert("게시글이 등록되었습니다.");

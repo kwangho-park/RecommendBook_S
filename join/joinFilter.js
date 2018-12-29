@@ -31,6 +31,7 @@ function join() {
 	var brathdayDom = document.getElementById("brathday"); // 사용자 입력 시 <input>
 															// attribute(date)에서
 															// 필터링
+	
 	var emailDom = document.getElementById("email"); // 필터링 적용 필요
 	var addressDom = document.getElementById("address");
 
@@ -44,9 +45,9 @@ function join() {
 	// 사용자에게 입력받은 data를 filter method에게 전달
 	var login = createFilter(idDom.value, pwDom.value, nameDom.value, brathdayDom.value);
 
+	/* 회원가입정보를 필터링하는 함수 호출 */ 
 	login.filter();
-	
-	saveInfo();
+
 
 } // join() END
 
@@ -70,6 +71,10 @@ function createFilter(id, pw, name, brathday) {
 					if ((name != "") && (isNaN(name))) { // name : 공백과 숫자일경우
 															// 실행x
 						if (brathday != "") { // brathday : 공백일경우 실행x
+							
+							/* session storage에 저장하는 함수호출 */
+							saveInfo();
+							
 							alert("회원가입이 완료 되었습니다 !!");
 						} else {
 							alert("생년월일을 입력해주실래요??^^");
