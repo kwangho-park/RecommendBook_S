@@ -6,15 +6,18 @@
 
 // '게시글 등록' button
 // [update]전역변수는 오류를 발생시킬 가능성이있기에 함수안으로 넣어야할듯
-var postBtn;
+
+//** var postBtn;
 
  
 /* web browser에 웹 페이지가 로딩 시 동작하는 function */
 function postEventListener(){
-	postBtn = document.getElementById("postBtn");		// <input> post button의 dom객체의 참조값을 반환
+	
+	// [장기고민] 객체의 주소값을 저장하는 용도와 동작원리는?
+	var postBtn = document.getElementById("postBtn");		// <input> post button의 dom객체의 참조값을 반환
 	  
 	postBtn.addEventListener("click",postBtnEL);		// function을 button의 이벤트 리스너등록 
-} // postinit() END
+} // postEventListener() END
  
 
 
@@ -22,10 +25,10 @@ function postEventListener(){
 function postBtnEL(){
 	
 	/* session storage의 잔여공간을 확인 */
-	// 0번 : 게시글 정보의 key 값
+	// 0번   : 게시글 정보의 length 값
 	// 1-5번 : 게시글 정보 (최대 5개)	
-
-	if(6>sessionStorage.getItem(0)){			// ***[update 필요함 = 현재 게시글이 6개까지 등록됨]
+	// 조건  : null아닌 경우 or length값이 5미만인 경우 (length:5 == full)
+	if( sessionStorage.getItem(0) == null || parseInt(sessionStorage.getItem(0)) < 5){	 
 		
 		// 입력 받은 게시글을 출력 (test용)//
 		printPosting();
@@ -36,15 +39,6 @@ function postBtnEL(){
 	}else{
 		alert("게시글수의 한도에 도달했습니다. 관리자에게 문의하세요!^-^");
 	}
-/*
-	// 입력 받은 게시글을 출력 (test용)//
-	printPosting();
-	
-	// session storage에 저장
-	post();
-*/	
-
-	
 } // postBtnEL() END
 
   
@@ -63,41 +57,34 @@ function post(){
 	var dto = new PostingDTO(bookName.value, writer.value, score.value, title.value);
 
 	
-	var add;		// key 값을 증가시키기 위한 변수
+	var add;		// length 값을 증가시키기 위한 변수
 	
 	
 	
-	/* 게시글 정보의 key 값 설정*/
-	if(sessionStorage.getItem(0) == null){		// 웹 페이지가 최초 로드 시 key값(0번)을 1로 초기화
+	/* 게시글 정보의 length 값 설정*/
+	if(sessionStorage.getItem(0) == null){		// 웹 페이지가 최초 로드 시 length값(0번)을 1로 초기화
 		sessionStorage.setItem(0, 1);
-		console.log("조건1");
-	}else{					
-		add = 1 + parseInt(sessionStorage.getItem(0));			// 문자열 -> 숫자 명시적으로 변환함
-		// [장기고민] sessionStorage.getItem(0)반환값의 타입이 문자열인 이유는??		
-		
+	}else{
+		add = 1 + parseInt(sessionStorage.getItem(0));		// 문자열 -> 숫자 명시적으로 변환필요
+															// 명시적인 타입변환이 필요한 이유 : 해당 method의 반환타입 string		
 		sessionStorage.setItem(0, add)
-		console.log("조건2");
 	}
 
-	key = sessionStorage.getItem(0);
-	
+	// length값 setting
+	var postingLength = sessionStorage.getItem(0);
 	
 	
 	// session storage에 게시글 정보를 저장 (1번~5번)
-	sessionStorage.setObj(key,dto);
-
-
+	sessionStorage.setObj(postingLength,dto);
 	
 
-	// test
-	console.log("----------------------")
-	console.log(sessionStorage.getItem(0));		// 게시글 정보의 key
-	console.log(sessionStorage.getObj(1)); 
-	console.log(sessionStorage.getObj(2));
-	console.log(sessionStorage.getObj(3));
-	console.log(sessionStorage.getObj(4));
-	console.log(sessionStorage.getObj(5));
-	console.log("----------------------")
+	// debug point
+	console.log("length : "+sessionStorage.getItem(0));		// 게시글 정보의 length (string type)
+	console.log("1번    : "+sessionStorage.getObj(1)); 		// 첫번째 게시글
+	console.log("2번    : "+sessionStorage.getObj(2));
+	console.log("3번    : "+sessionStorage.getObj(3));
+	console.log("4번    : "+sessionStorage.getObj(4));
+	console.log("5번    : "+sessionStorage.getObj(5));			// 마지막 게시글
 
 	
 	alert("게시글이 등록되었습니다.");

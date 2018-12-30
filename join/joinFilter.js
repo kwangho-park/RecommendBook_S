@@ -12,11 +12,10 @@ email = 이메일 형식 (정규식 활용)   - 미구현 2018.12.03
 address = 문자열
  */
 
-var joinBtn;
 
 /* join page가 웹 브라우저에 로딩될때 실행되는 메소드 (=초기화) */
 function joinEventListener() {
-	joinBtn = document.getElementById("joinBtn");
+	var joinBtn = document.getElementById("joinBtn");
 
 	joinBtn.onclick = join;
 }
@@ -41,10 +40,12 @@ function join() {
 	// var resultEmail =
 	// /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
 
-	// 객체 생성 및 참조값 할당
-	// 사용자에게 입력받은 data를 filter method에게 전달
+	
+	/* 객체 생성 및 참조값 할당 */
+	// 사용자에게 입력받은 data를 filter method에게 전달 (은닉된 creaeFilter 변수를 setting)
 	var login = createFilter(idDom.value, pwDom.value, nameDom.value, brathdayDom.value);
 
+	
 	/* 회원가입정보를 필터링하는 함수 호출 */ 
 	login.filter();
 
@@ -57,12 +58,12 @@ function join() {
 
 /* 회원가입 정보 필터링 function */
 // id, pw, name, brathday
-// closure method로 구현 할 필요가 없을듯 ..
 function createFilter(id, pw, name, brathday) {
 
 	return {
 		filter : function() { // filter property의 closure method
 
+			
 			// 회원정보 filtering 알고리즘
 			// isNaN 라이브러리 메소드 : not a number : 숫자가 아닐경우 true반환
 			if ((id != "") && (isNaN(id))) { // id : 공백과 숫자일경우 실행x

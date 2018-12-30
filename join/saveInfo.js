@@ -1,5 +1,6 @@
 
-/* 사용자 ID, PW를 저장하기위한 DTO생성자함수(부모) */
+
+/* 사용자 정보 저장용 DTO(부모) */
 function BaseInfoDTO(id, pw){
 
 	// 자식 instance에서 호출 시 전달인자가 있을때 arguments객체의 property 저장
@@ -9,13 +10,13 @@ function BaseInfoDTO(id, pw){
 	
 }// BaseInfo() END
 
-/* 사용자정보를 저장하기위한 DTO생성자함수(자식) */
+/* 사용자 정보 저장용 DTO(자식) */
 function ExtendInfoDTO(id, pw, name, brathday, email, address, joinProcess, advertising){
 	
 
-	/* 부모 생성자 빌리기!(상속) */
+	/* 부모 생성자 빌리기!(=상속) */
 	// id, pw property 생성
-	BaseInfoDTO.apply(this, arguments);		// arguments 객체 : 전달인자가 저장되는 배열과 유사한 객체 = 전달하는 이유는?
+	BaseInfoDTO.apply(this, arguments);		// arguments 객체 : 전달인자가 저장되는 배열과 유사한 객체
 	// arguments[0] = id값
 	// arguments[1] = pw값
 
@@ -45,36 +46,41 @@ function saveInfo(){
 	
 	
 	/* DTO 객체 생성, 초기화, 할당 */
-	// session storage에 저장하기위한 DTO
 	// instance(객체)를 생성 및 초기화
 	var dto = new ExtendInfoDTO(idDom.value, pwDom.value, nameDom.value, brathdayDom.value, emailDom.value, addressDom.value);
+
 	
-
-
-	// session storage에 key값과 회원정보를 저장 */
-	// 10번   : 회원정보를 저장하는 기준 key값
+	var infoNum;
+	
+	// session storage에 number값과 회원정보를 저장 */
+	// 10번   : 회원정보를 저장하는 번호
 	// 11번 ~ : 실제 회원정보가 저장되는 곳 
-	// var key = 10;
-	
-	
-	// ***[update] key값을 저장하고 회원가입시마다 key값을 증가시키는 로직이 필요함
-	// 11번부터 storage에 저장된 data를 카운트 해야 할 것으로 추정됨
-	
-	
-	sessionStorage.setObj(10, dto);
+	if(sessionStorage.getItem(10) == null){
+		sessionStorage.setItem(10,11);
+		infoNum = 11;						// 시작번호
+		
+	}else{
+		infoNum = sessionStorage.getItem(10);
+		infoNum ++;
+		sessionStorage.setItem(10, infoNum);
+	}
+
+	// 회원정보를 session storage에 저장
+	sessionStorage.setObj(infoNum, dto);
 	
 	
 	// test
-	var test = sessionStorage.getObj(10);
+	var test = sessionStorage.getObj(infoNum);
 	
-	console.log(test.id);
-	console.log(test.pw);
-	console.log(test.name);
-	console.log(test.brathday);
-	console.log(test.email);
-	console.log(test.address);
+	console.log("number : "+infoNum);
+	
+	console.log(sessionStorage.getObj(11));
+	console.log(sessionStorage.getObj(12));
+	console.log(sessionStorage.getObj(13));
+	console.log(sessionStorage.getObj(14));
+	console.log(sessionStorage.getObj(15));	
 
-	
+
 
 }// saveInfo() END
 
@@ -88,4 +94,3 @@ Storage.prototype.setObj = function(key, obj) {
 Storage.prototype.getObj = function(key) {
     return JSON.parse(this.getItem(key))
 }
-
