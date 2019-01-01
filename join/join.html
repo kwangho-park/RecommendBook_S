@@ -74,7 +74,7 @@
 
         <h3> 양식</h3>
 
-        <label class="joinInfo"> 아 이 디&nbsp; : &nbsp;</label>					<input type = "text" 		id="id" placeholder="아이디를 입력해줘야겠쥬?"> <button>중복확인</button>
+        <label class="joinInfo"> 아 이 디&nbsp; : &nbsp;</label>					<input type = "text" 		id="id" placeholder="아이디를 입력해줘야겠쥬?"><input type="button" id="idCheckBtn" value="중복확인">
         <label class="joinInfo"> 비밀번호 : &nbsp;</label>							<input type = "password" 	id="pw" placeholder="잊어버리면 찾을 수가 없슈!">
         <label class="joinInfo"> 이&nbsp; &nbsp; 름&nbsp; : &nbsp;</label>			<input type = "text" 		id="name" placeholder="이름이 뭐쥬?">
         <label class="joinInfo"> 생년월일 : &nbsp;</label>							<input type = "date"  		id="brathday" placeholder="챙겨주지 않을꺼 알쥬?">
@@ -140,6 +140,9 @@
   
   <!-- session storage에 저장하는 로직 -->
   <script src="saveInfo.js"></script>
+  
+  <!-- id 중복여부를 확인하는 로직 -->
+  <script src="idFilter.js"></script>
   
 <body>
 

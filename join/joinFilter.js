@@ -16,12 +16,16 @@ address = 문자열
 /* join page가 웹 브라우저에 로딩될때 실행되는 메소드 (=초기화) */
 function joinEventListener() {
 	var joinBtn = document.getElementById("joinBtn");
-
-	joinBtn.onclick = join;
+	var idCheckBtn = document.getElementById("idCheckBtn");
+	
+	joinBtn.onclick = joinBtnEL;
+	idCheckBtn.onclick = idCheckEL;
+	
 }
 
+
 /* join button click 시 실행되는 함수 */
-function join() {
+function joinBtnEL() {
 
 	/* <input> 의 dom객체의 참조값을 반환 */
 	var idDom = document.getElementById("id");
@@ -53,7 +57,7 @@ function join() {
 } // join() END
 
 
-  
+
 
 
 /* 회원가입 정보 필터링 function */
@@ -66,17 +70,22 @@ function createFilter(id, pw, name, brathday) {
 			
 			// 회원정보 filtering 알고리즘
 			// isNaN 라이브러리 메소드 : not a number : 숫자가 아닐경우 true반환
-			if ((id != "") && (isNaN(id))) { // id : 공백과 숫자일경우 실행x
+			if ((id != "") && (isNaN(id))) {		 	// id : 공백과 숫자일경우 실행x
 
-				if ((pw != "") && (!isNaN(pw))) { // pw : 공백과 문자일경우 실행x
-					if ((name != "") && (isNaN(name))) { // name : 공백과 숫자일경우
-															// 실행x
-						if (brathday != "") { // brathday : 공백일경우 실행x
+				if ((pw != "") && (!isNaN(pw))) { 		// pw : 공백과 문자일경우 실행x
+					if ((name != "") && (isNaN(name))) {// name : 공백과 숫자일경우
+														// 실행x
+						if (brathday != "") { 			// brathday : 공백일경우 실행x
 							
-							/* session storage에 저장하는 함수호출 */
-							saveInfo();
-							
-							alert("회원가입이 완료 되었습니다 !!");
+							if(idFilter(id)){			// ID 중복여부를 필터링하는 함수 호출
+								
+								/* session storage에 저장하는 함수호출 */
+								saveInfo();
+								
+								alert("회원가입이 완료 되었습니다 !!");
+							}else{
+								alert("이미 존재하는 ID 입니다")
+							}
 						} else {
 							alert("생년월일을 입력해주실래요??^^");
 						}
@@ -92,3 +101,19 @@ function createFilter(id, pw, name, brathday) {
 		} // filter() END
 	} // return object END
 } // createFilter() END
+
+
+
+/* ID 중복확인 button click 시 실행되는 함수 */
+
+function idCheckEL(){
+
+	/* <input> 의 dom객체의 참조값을 반환 */
+	var idDom = document.getElementById("id");
+
+	if(idFilter(idDom.value)){					// ID 중복여부를 필터링하는 함수 호출
+		alert("가입이 가능한 ID 입니다!");
+	}else{
+		alert("이미 존재하는 ID 입니다.");
+	}
+}
