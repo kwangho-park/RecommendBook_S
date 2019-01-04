@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title> search book </title>
+
+  <meta charset = "utf-8">
+  <meta name="description" content = "사용자의 취향을 고려한 도서 추천 웹 사이트">
+  <meta name="keywords" content = "book">
+
+  
+  <!-- 전체 영역 단위 CSS : 외부파일-->
+  <link href="../common/webSiteStyle.css" type="text/css" rel="stylesheet">
+
+  <!-- 해당 page단위 CSS -->
+  <link href="recommendBookStyle.css" type="text/css" rel="stylesheet">
+  
+
+</head>
+
+
+<body onload="initSearchBook()">
+
+  <!-- main penel -->
+  <div class="mainPanel">		
+
+  <header>  
+  	<h1> Recommend book web site </h1>
+  </header>
+
+  <!-- menu panel -->
+  <nav>  
+  
+	<span class="menuPanel"><a href="../index/index.html" target="_self">			홈 페이지</a></span>
+	<span class="menuPanel"><a href="../join/join.html" target="_self">				회원가입</a></span>
+	<span class="menuPanel"><a href="../login/login.html" target="_self">			로그인</a></span>
+	<span class="menuPanel"><a href="../searchBook/searchBook.html" target="_self">	추천도서 검색</a></span>
+ 	<span class="menuPanel"><a href="../post/post.html" target="_self">				게시글 작성</a></span>		
+ 	
+
+  </nav>
+
+  </div>
+
+
+  
+
+  <section>
+  
+    <!-- 도서취향 검색 및 추천 순위표-->
+    <article>
+      <iframe src="searchBook/searchBook.html" width = "35%" height = "400px"></iframe>
+      <iframe src="rankingTable/rankingTable.html" width = "60%" height = "400px"></iframe>
+	</article>
+
+	<article>
+
+	<br>
+
+	<table>
+		<thead>
+			<tr><th>순위</th><th>도 서 명</th><th>작 가 명</th><th>추천 점수</th><th>제 목</th></tr>
+		</thead>
+		
+		<tbody>
+			<tr><td>6</td><td id="bookName6"></td><td id="writer6"></td><td id="score6"></td><td id="title6"></td></tr>
+			<tr><td>7</td><td id="bookName7"></td><td id="writer7"></td><td id="score7"></td><td id="title7"></td></tr>
+			<tr><td>8</td><td id="bookName8"></td><td id="writer8"></td><td id="score8"></td><td id="title8"></td></tr>
+			<tr><td>9</td><td id="bookName9"></td><td id="writer9"></td><td id="score9"></td><td id="title9"></td></tr>
+			<tr><td>10</td><td id="bookName10"></td><td  id="writer10"></td><td id="score10"></td ><td id="title10"></td></tr>
+		</tbody>
+		
+	</table>
+	
+	
+	<br>
+	
+	</article>
+
+
+  </section>
+  
+  
+  <hr>
+
+  <!-- reference contents -->
+  <aside> 
+    참고 : 박광호의 기술 블로그<a href = "http://solt.tistory.com" target = "_blank" title = "극논리주의 짠백이">
+    (solt.tistory.com) </a>
+  </aside>		
+
+
+   <!-- 저작권 정보, 연락처 등-->
+  <footer> 
+    저작권 : recommend book web site는 <mark>박광호(웹 프로그래머)에게 저작권</mark>이 있습니다
+  </footer>
+
+
+  <!-- ----------------------------------------------------------------------------------------- -->
+  
+  <!-- web page loading 시 초기화 로직 -->
+  <script src="initSearchBook.js"></script>
+	
+  <!-- munuPanel의 동적 CSS -->
+  <script src="../common/menuPanel.js"></script>  
+  
+  <!-- 게시글을 업데이트하는 로직 -->
+  <script src="printPost.js"></script>
+
+  
+
+</body>
+</html>

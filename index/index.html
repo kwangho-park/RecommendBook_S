@@ -10,50 +10,13 @@
   <meta name="description" content = "사용자의 취향을 고려한 도서 추천 웹 사이트">
   <meta name="keywords" content = "book">
 
-  <!-- 전체 영역 단위 CSS : 외부파일-->
+  <!-- 전체 영역 단위 CSS-->
   <link href="../common/webSiteStyle.css" type="text/css" rel="stylesheet">
- 
 
-
-
-  <!-- tag 단위 css -->  
-  <style>
-    article{
-    text-align : center;
-    }
-  </style>
+  <!-- 해당 page단위 CSS -->
+  <link href="indexStyle.css" type="text/css" rel="stylesheet">
   
-  
-  
-  <!-- attribute 단위 css -->  
-  <style>
 
-    /* home page img - box model */
-    .HomeImg{
-    /* 박스 유형 */
-    display: block;
-    
-    /* 박스 위치 */
-    margin-left: auto;
-    margin-right: auto;
-   
-    /* 박스 사이즈 */
-    box-sizing : border-box;		/* 전체 폭(width) property = 패딩+보더(테두리) */
-    width: 100%;
-    
-    
-    /* box style */      
-    padding : 0.2em;
-    
-    border-width : 0.3em;
-    border-color : DarkBlue;
-    border-style : solid;
-    
-    background : MediumTurquoise ;
-    }
-  </style>
-
-  
 
 </head>
 
@@ -71,11 +34,11 @@
   <!-- menu panel -->
   <nav>  
   
-	<span class="menuPanel"><a href="../index/index.html" target="_self">			홈 페이지</a></span>
-	<span class="menuPanel"><a href="../join/join.html" target="_self">				회원가입</a></span>
-	<span class="menuPanel"><a href="../login/login.html" target="_self">			로그인</a></span>
-	<span class="menuPanel"><a href="../searchBook/searchBook.html" target="_self">	추천도서 검색</a></span>
- 	<span class="menuPanel"><a href="../post/post.html" target="_self">				게시글 작성</a></span>		
+	<span class="menuPanel"><a href="../index/index.html" target="_self">					홈 페이지</a></span>
+	<span class="menuPanel"><a href="../join/join.html" target="_self">						회원가입</a></span>
+	<span class="menuPanel"><a href="../login/login.html" target="_self">					로그인</a></span>
+	<span class="menuPanel"><a href="../recommendBook/recommendBook.html" target="_self">	추천도서 검색</a></span>
+ 	<span class="menuPanel"><a href="../post/post.html" target="_self">						게시글 작성</a></span>		
 
   </nav>
 
@@ -118,17 +81,10 @@
   </footer>
   
   
-  <!-- ----------------------------------------------------------------------------------------- -->
+  <!-- web page loading 시 초기화 로직 -->
+  <script src="initIndex.js"></script>
   
-  <script>
-  <!-- web page가 web browser에 load될 때 초기화하는 함수  -->
-  function init(){
-	  menuInit();
-  }
-  </script>
-  
-
-
+  <!-- menuPanel CSS의 동적인 동작을 위한 로직 -->
   <script src="../common/menuPanel.js"></script>
  
 

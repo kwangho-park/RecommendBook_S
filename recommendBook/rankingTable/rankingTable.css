@@ -1,0 +1,31 @@
+/* tag 단위 CSS */
+body {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div {
+	padding: 40px;
+}
+
+table {
+	margin-left: auto;
+	margin-right: auto;
+	border-collapse: collapse; /* 이중 테두리 제거*/
+	text-align: center;
+	border: 2px solid gray;
+	background: rgb(255, 203, 255);
+}
+
+table a {
+	text-decoration: none; /* hyper text decoration 제거*/
+}
+
+thead {
+	background: rgb(255, 145, 255);
+	th
+}
+
+tbody tr:hover { /* hover의 동작원리에 대한 이해가 필요함!! */
+	background: rgb(255, 100, 150);
+}

@@ -29,13 +29,11 @@
 
   	<!-- menu panel -->
   	<nav>  
-  
-	<span class="menuPanel"><a href="../index/index.html" target="_self">			홈 페이지</a></span>
-	<span class="menuPanel"><a href="../join/join.html" target="_self">				회원가입</a></span>
-	<span class="menuPanel"><a href="../login/login.html" target="_self">			로그인</a></span>
-	<span class="menuPanel"><a href="../searchBook/searchBook.html" target="_self">	추천도서 검색</a></span>
- 	<span class="menuPanel"><a href="../post/post.html" target="_self">				게시글 작성</a></span>	
- 		
+		<span class="menuPanel"><a href="../index/index.html" target="_self">					홈 페이지</a></span>	
+		<span class="menuPanel"><a href="../join/join.html" target="_self">						회원가입</a></span>
+		<span class="menuPanel"><a href="../login/login.html" target="_self">					로그인</a></span>	
+		<span class="menuPanel"><a href="../recommendBook/recommendBook.html" target="_self">	추천도서 검색</a></span>
+ 		<span class="menuPanel"><a href="../post/post.html" target="_self">						게시글 작성</a></span>		
     </nav>
     
     </div>
@@ -91,8 +89,8 @@
 	      <option value = "romance" selected> 달달한 로맨스 </option>
 	      <option value = "wit"> 재미있는 유머 </option>
 	      <option value = "story"> 탄탄한 스토리 </option>
-	      <option value = "detective"> 추리 </option>
-	      <option value = "action"> 액션 </option>
+	      <option value = "detective"> 뇌섹남의 추리 </option>
+	      <option value = "action"> 짜릿한 액션 </option>
 	    </select>      
 	</div>
 	  
@@ -115,6 +113,7 @@
 	<div class="postInfo"><input type="number" id="score" min="1" max="10"></div>
 
 	<br>
+	<!-- 게시글 등록 버튼 -->
 	<div align="center"><input type="button" id="postBtn"value="게시글 등록"></div>
 	<br>
 	
@@ -133,6 +132,11 @@
   <!-- 게시글 출력하는 로직 (연습용) -->
   <script src="printPosting.js"></script>
   
+  <!-- MVC model간의 데이터이동을 위한 객체 DTO (연습용) -->
+  <script src="postingDTO.js"></script>
+  
+  <!-- 게시글 정보 필터링-->
+  <script src="postFilter.js"></script>
 
 </body>
 
