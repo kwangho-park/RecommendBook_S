@@ -1,5 +1,0 @@
-
-function initJoin() {
-	menuInit();
-	joinEventListener();
-}

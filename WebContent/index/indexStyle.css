@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+/* tag 단위 css */
+article {
+	text-align: center;
+}
+
+/* attribute 단위 css */
+
+/* home page img - box model */
+.HomeImg {
+	
+	/* 박스 유형 */
+	display: block;
+	
+	/* 박스 위치 */
+	margin-left: auto;
+	margin-right: auto;
+	
+	/* 박스 사이즈 */
+	box-sizing: border-box; /* 전체 폭(width) property = 패딩+보더(테두리) */
+	width: 100%;
+	
+	/* box style */
+	padding: 0.2em;
+	border-width: 0.3em;
+	border-color: DarkBlue;
+	border-style: solid;
+	background: MediumTurquoise;
+}

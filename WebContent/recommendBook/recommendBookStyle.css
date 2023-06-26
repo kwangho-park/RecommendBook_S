@@ -1,0 +1,35 @@
+
+
+
+  /* tag 단위 CSS */
+
+
+table{ /* defult display : block */	
+ 	margin-left : auto;
+  	margin-right : auto;
+  	text-align : center;
+  	border : 2px solid gray;
+  	background : rgb(130,255,170);
+  	border-collapse: collapse;		/* 이중 테두리 제거*/
+  	
+}
+  
+th{
+ 	width : 150px;
+}
+  
+  
+thead{ /* defule display : inline */
+     background : rgb(60,170,110);
+}
+  
+tbody{ /* defule display : inline */
+
+}
+
+
+  
+/* attribute 단위 CSS */
+  
+  
+  

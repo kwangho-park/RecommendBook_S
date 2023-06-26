@@ -1,0 +1,85 @@
+ 
+/*/ web site 전체 CSS 스타일 /*/
+ 
+/*/ tag 단위/ */
+
+h1{
+	color : DarkBlue ; 
+	text-align : center;
+	font-size : 3em;
+}
+
+h2{
+	text-align : center;	
+}
+    
+body {
+	background-color : PowderBlue;
+	margin-left: 50px;
+	margin-right: 50px;
+	border : 3px solid gray;
+}
+
+hr{
+  border : 3px solid gray;
+}
+
+
+nav{
+	
+	/* nav내부의 box의 배치를 위한 설정 */
+	text-align : center;	/* [중요] box안에 있는 inline box를 text 취급!! */
+}
+
+
+nav a{
+	text-decoration: none;  /* hyper text decoration 제거*/  	
+}
+
+   
+   
+   
+   
+/*/ attribute 단위 /*/
+
+.mainPanel{
+        
+	/* 유형(타입)과 위치 */
+	display : block;
+
+	margin-left: auto;
+	margin-right: auto;
+
+	box-sizing : border-box;
+	width : 100%;				
+
+
+	/* box style */
+	padding : 20px;    
+	background : skyblue;
+
+}
+
+
+
+
+/* mouse over */
+/* hover의 동작원리에 대한 이해가 필요함!! */
+/*
+#mouseOver:hover{			
+	background : red;
+}
+
+*/
+
+.menuPanel{
+
+	/* box style */
+	padding : 5px;
+	margin : 5px;
+	
+	border : 1px solid gray;
+	background : MediumTurquoise;
+}  
+
+   
